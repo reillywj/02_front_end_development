@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Basic CSS Exercises: Dimension and Spacing</title>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+      .ex-1 {
+        text-align: center;
+      }
+      .ex-1 img {
+        width: 800px;
+      }
+
+      .ex-2 img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .ex-3 img {
+        height: 533px;
+      }
+
+      .ex-4 img {
+        height: 100%;
+        min-width: 500px;
+      }
+
+      .ex-5 > div {
+        display: block;
+        width: 300px;
+        height: 300px;
+      }
+
+      .ex-5 #red {
+        background-color: #fcc;
+      }
+
+      .ex-5 #blue {
+        background-color: #ccf;
+      }
+
+      .ex-6 #blue {
+        border: solid 2px black;
+      }
+
+      .ex-7 #red {
+        padding: 20px;
+      }
+
+      .ex-7 > div {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+
+      .ex-8 > div {
+        display: inline-block;
+      }
+
+      .ex-9 > div:nth-child(2) {
+        margin-left: 20px;
+      }
+
+      ul.ex-10 {
+        padding: 0;
+        list-style: none;
+        background: #a7ceff;
+      }
+
+      .ex-10 li {
+        min-height: 120px;
+        line-height: 120px;
+        text-align: center;
+        background: #ffc;
+        display: inline-block;
+        width: 25%;
+      }
+
+      .ex-11 li {
+        margin: -10px 1%;
+        width: 23%;
+      }
+
+      table.ex-12 {
+        background: #a7ceff;
+        width: 100%;
+      }
+
+      .ex-12 td {
+        background: #ffc;
+        width: 25%;
+        text-align: center;
+      }
+
+      table.ex-13 {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <figure class="ex-1 ex-2 ex-3 ex-4">
+      <img src="http://tl-fe1.s3.amazonaws.com/lesson_2/exercises_dimension_and_spacing/H%C3%B4tel_des_Invalides_-_20150801_16h09_(10630).jpg">
+    </figure>
+
+    <hr>
+    <div class="ex-5 ex-6 ex-7 ex-8 ex-9">
+      <div id="red"></div><!-- 
+       --><div id="blue"></div>
+    </div>
+
+    <hr>
+
+    <ul class="ex-10 ex-11">
+      <li>Item 1</li><!--
+      --><li>Item 2</li><!--
+      --><li>Item 3</li><!--
+      --><li>Item 4</li>
+    </ul>
+
+    <hr>
+
+    <table class="ex-12 ex-13">
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+        <td>Cell 3</td>
+        <td>Cell 4</td>
+      </tr>
+    </table>
+  </body>
+</html>
