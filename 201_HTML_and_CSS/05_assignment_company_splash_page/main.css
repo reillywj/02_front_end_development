@@ -1,0 +1,49 @@
+body {
+  font: normal 16px/20px Helvetica, Arial, sans-serif;
+  color: #444;
+  background: rgb(41,36,56) url(bg_body.gif);
+  text-align: center;
+}
+
+body > header {
+  margin-top: 160px;
+  margin-bottom: 80px;
+}
+
+main {
+  background-color: white;
+  padding: 40px 80px 40px;
+}
+
+header h1 {
+  font-size: 2.25em;
+}
+
+header h2 {
+  font-size: 1.5em;
+  color: rgb(62, 152, 178);
+}
+
+main article:nth-child(2) {
+  padding-top: 80px;
+}
+
+main,
+footer {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 90%;
+  min-width: 450px;
+  max-width: 780px;
+}
+
+footer {
+  background-color: #eee;
+  padding: 15px 0;
+}
+
+footer li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 9%;
+}
