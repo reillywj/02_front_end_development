@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font: normal 32px Helvetica Arial sans-serif;
+  font: normal 16px Helvetica, Arial, sans-serif;
   color: #222;
-  background: #48484;
+  background: #484848;
+  
 }
 
 .button {
@@ -18,7 +19,7 @@ body > header {
   width: 980px;
   padding: 15px 25px;
   margin: 0 auto 25px auto;
-  background: #ffffff;
+  background: #fff;
   box-sizing: border-box;
 }
 
@@ -32,22 +33,24 @@ header li {
   background: #b3f6ff;
 }
 header a {
-  padding: 10px;
   text-align: center;
+  display: block;
+  padding: 10px;
   text-transform: uppercase;
   text-decoration: none;
   color: #995252;
 }
-header a:hove {
+header a:hover {
   text-decoration: underline;
 }
 
 main {
-  overflow: hidden;
+  /*overflow: hidden;*/
   margin: 0 auto 25px auto;
   width: 980px;
   padding: 15px 25px;
   background: #ffffff;
+  box-sizing: border-box;
 }
 main header {
   position: relative;
@@ -63,7 +66,7 @@ main header:before {
   top: 4px;
   bottom: 0;
   left: -75px;
-  z-index: 1;
+  z-index: -1;
   width: 15px;
   content: "";
   border: 30px solid #b00b00;
@@ -84,15 +87,30 @@ main time {
   line-height: 140%;
 }
 
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
 .two_third {
   float: left;
-  width: 647px;
+  width: 622px;
   padding: 0 20px 0 0;
 }
 
 .one_third {
   float: left;
-  width: 313px;
+  width: 288px;
 }
 
 .one_third fieldset {
@@ -105,6 +123,10 @@ main time {
   border: 1px solid #d0d0d0;
   border-radius: 3px;
 }
+
+/*
+  Footer
+*/
 
 footer {
   padding: 10px 25px;
