@@ -3,10 +3,10 @@ body {
   color: #444;
   background: rgb(41,36,56) url(bg_body.gif);
   text-align: center;
+  padding: 160px 0 50px 0;
 }
 
 body > header {
-  margin-top: 160px;
   margin-bottom: 80px;
 }
 
@@ -31,7 +31,6 @@ main article:nth-child(2) {
 main,
 footer {
   box-sizing: border-box;
-  display: block;
   width: 90%;
   min-width: 450px;
   max-width: 780px;
