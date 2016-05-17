@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Positioning Exercises</title>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+      body {
+        background: #333;
+      }
+      article {
+        background: #cfc;
+      }
+
+      aside {
+        background: #ccf;
+        box-sizing: border-box;
+        padding: 20px;
+        position: absolute;
+        /*position: fixed;*/
+        top: 30px;
+        left: 50%;
+        width: 400px;
+        margin-left: -200px;
+        z-index: 1;
+      }
+
+      #fixed {
+        background: rgba(0,0,0,.6);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        margin: 0;
+      }
+
+      #abs-element {
+        width: 20px;
+        height: 20px;
+        background: #fcfc99;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <aside>
+      <div id="abs-element"></div>
+      <p>I&rsquo;m positioned!</p>
+    </aside>
+    <div id="fixed">
+    </div>
+    <article>
+      <p>Quisque nisi nisi, sagittis at mi non, vulputate scelerisque justo. Donec iaculis commodo dui in viverra. Nam nec feugiat ligula. Fusce at posuere eros. Morbi at risus quis neque rutrum ullamcorper. Integer sit amet risus nec velit mollis blandit. Curabitur ut pretium turpis, eu porta urna. In aliquet gravida tellus id fringilla. Mauris ac neque ac leo placerat faucibus et vel erat. Vestibulum consequat eros finibus, pulvinar odio a, volutpat purus. Nam vel purus et augue consequat varius. Nam porta tellus arcu, at varius lectus commodo eu.</p>
+
+      <p>Mauris consequat suscipit ligula. Pellentesque a sollicitudin tortor. Quisque vel nulla vitae justo sollicitudin bibendum. Donec suscipit iaculis interdum. Duis scelerisque ligula felis, ut lacinia mauris maximus ut. Aliquam placerat ut felis ut rutrum. Pellentesque at vulputate neque. Aliquam erat volutpat.</p>
+
+      <p>Mauris faucibus orci eu orci lobortis tempus vitae sit amet tortor. Integer blandit in tellus at vehicula. Ut volutpat ex non tortor accumsan, aliquam fermentum nulla tempus. Vivamus efficitur felis id lectus luctus semper. Etiam sed purus dictum, semper dolor ut, consectetur turpis. Morbi eget ex elit. Aliquam sit amet auctor nisi, eu tincidunt erat. Vivamus vulputate est a turpis pharetra laoreet. Sed auctor felis et ipsum facilisis, et faucibus turpis maximus.</p>
+
+      <p>Quisque nisi nisi, sagittis at mi non, vulputate scelerisque justo. Donec iaculis commodo dui in viverra. Nam nec feugiat ligula. Fusce at posuere eros. Morbi at risus quis neque rutrum ullamcorper. Integer sit amet risus nec velit mollis blandit. Curabitur ut pretium turpis, eu porta urna. In aliquet gravida tellus id fringilla. Mauris ac neque ac leo placerat faucibus et vel erat. Vestibulum consequat eros finibus, pulvinar odio a, volutpat purus. Nam vel purus et augue consequat varius. Nam porta tellus arcu, at varius lectus commodo eu.</p>
+
+      <p>Mauris consequat suscipit ligula. Pellentesque a sollicitudin tortor. Quisque vel nulla vitae justo sollicitudin bibendum. Donec suscipit iaculis interdum. Duis scelerisque ligula felis, ut lacinia mauris maximus ut. Aliquam placerat ut felis ut rutrum. Pellentesque at vulputate neque. Aliquam erat volutpat.</p>
+
+      <p>Mauris faucibus orci eu orci lobortis tempus vitae sit amet tortor. Integer blandit in tellus at vehicula. Ut volutpat ex non tortor accumsan, aliquam fermentum nulla tempus. Vivamus efficitur felis id lectus luctus semper. Etiam sed purus dictum, semper dolor ut, consectetur turpis. Morbi eget ex elit. Aliquam sit amet auctor nisi, eu tincidunt erat. Vivamus vulputate est a turpis pharetra laoreet. Sed auctor felis et ipsum facilisis, et faucibus turpis maximus.</p>
+
+      <p>Quisque nisi nisi, sagittis at mi non, vulputate scelerisque justo. Donec iaculis commodo dui in viverra. Nam nec feugiat ligula. Fusce at posuere eros. Morbi at risus quis neque rutrum ullamcorper. Integer sit amet risus nec velit mollis blandit. Curabitur ut pretium turpis, eu porta urna. In aliquet gravida tellus id fringilla. Mauris ac neque ac leo placerat faucibus et vel erat. Vestibulum consequat eros finibus, pulvinar odio a, volutpat purus. Nam vel purus et augue consequat varius. Nam porta tellus arcu, at varius lectus commodo eu.</p>
+
+      <p>Mauris consequat suscipit ligula. Pellentesque a sollicitudin tortor. Quisque vel nulla vitae justo sollicitudin bibendum. Donec suscipit iaculis interdum. Duis scelerisque ligula felis, ut lacinia mauris maximus ut. Aliquam placerat ut felis ut rutrum. Pellentesque at vulputate neque. Aliquam erat volutpat.</p>
+
+      <p>Mauris faucibus orci eu orci lobortis tempus vitae sit amet tortor. Integer blandit in tellus at vehicula. Ut volutpat ex non tortor accumsan, aliquam fermentum nulla tempus. Vivamus efficitur felis id lectus luctus semper. Etiam sed purus dictum, semper dolor ut, consectetur turpis. Morbi eget ex elit. Aliquam sit amet auctor nisi, eu tincidunt erat. Vivamus vulputate est a turpis pharetra laoreet. Sed auctor felis et ipsum facilisis, et faucibus turpis maximus.</p>
+
+      <p>Quisque nisi nisi, sagittis at mi non, vulputate scelerisque justo. Donec iaculis commodo dui in viverra. Nam nec feugiat ligula. Fusce at posuere eros. Morbi at risus quis neque rutrum ullamcorper. Integer sit amet risus nec velit mollis blandit. Curabitur ut pretium turpis, eu porta urna. In aliquet gravida tellus id fringilla. Mauris ac neque ac leo placerat faucibus et vel erat. Vestibulum consequat eros finibus, pulvinar odio a, volutpat purus. Nam vel purus et augue consequat varius. Nam porta tellus arcu, at varius lectus commodo eu.</p>
+
+      <p>Mauris consequat suscipit ligula. Pellentesque a sollicitudin tortor. Quisque vel nulla vitae justo sollicitudin bibendum. Donec suscipit iaculis interdum. Duis scelerisque ligula felis, ut lacinia mauris maximus ut. Aliquam placerat ut felis ut rutrum. Pellentesque at vulputate neque. Aliquam erat volutpat.</p>
+
+      <p>Mauris faucibus orci eu orci lobortis tempus vitae sit amet tortor. Integer blandit in tellus at vehicula. Ut volutpat ex non tortor accumsan, aliquam fermentum nulla tempus. Vivamus efficitur felis id lectus luctus semper. Etiam sed purus dictum, semper dolor ut, consectetur turpis. Morbi eget ex elit. Aliquam sit amet auctor nisi, eu tincidunt erat. Vivamus vulputate est a turpis pharetra laoreet. Sed auctor felis et ipsum facilisis, et faucibus turpis maximus.</p>
+    </article>
+  </body>
+</html>
