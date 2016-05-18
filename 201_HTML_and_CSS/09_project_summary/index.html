@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Project: Summary of Box Model, Positioning and Floats Rules</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      /* Initial Styling */
+      body {
+        font: normal 18px "Helvetica Neue", Arial, sans-serif;
+      }
+
+      body,
+      a,
+      a:hover,
+      a:visited {
+        color: #444;
+      }
+
+      article * {
+        box-sizing: border-box;
+      }
+
+      article {
+        border: solid 2px #999;
+        padding: 15px;
+        min-width: 600px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1, h2 {
+        color: #c55;
+      }
+
+      header h1 {
+        font-size: 2.5em;
+        text-align: center;
+      }
+
+      a,
+      a:hover,
+      a:visited {
+        text-decoration: none;
+      }
+
+      p {
+        line-height: 2em;
+      }
+
+      ul li {
+        font-style: italic;
+      }
+
+      /* Inline Blocks */
+      .box {
+        width: 700px;
+        margin: 45px;
+      }
+
+      .dashed {
+        border: dashed 2px #444;
+      }
+
+
+      .box,
+      .padded a {
+        padding: 30px;
+      }
+
+      .margin a {
+        margin: 15px;
+      }
+
+      .group:after {
+        display: block;
+        clear: both;
+        content: "";
+      }
+
+      .floated-inline a {
+        float: left;
+      }
+
+      /* Block Elements */
+      .blue,
+      .green,
+      .red {
+        color: white;
+      }
+
+      .blue {
+        background: #38f;
+      }
+
+      .green{
+        background: green;
+      }
+
+      .red {
+        background: tomato;
+      }
+
+      .div-padding {
+        padding: 20px;
+      }
+
+      .div-margin {
+        margin: 20px;
+      }
+
+      .div-height {
+        height: 60px;
+      }
+
+      .div-width {
+        width: 90px;
+      }
+
+      /* Floating Block Elements */
+
+      .float-left {
+        float: left;
+      }
+
+      .float-right {
+        float: right;
+      }
+
+      .border-red {
+        border: solid 1px red;
+      }
+
+      .width1 {
+        width: 40%;
+        margin: auto auto;
+        text-align: center;
+      }
+
+      .height1 {
+        height: 60px;
+        line-height: 60px;
+      }
+
+      .block-nav a {
+        display: block;
+        background: #38f;
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .block-nav a:first-of-type {
+        marin-top: 0px;
+      }
+
+      /* Inline-Block */
+
+      .inline-block-a a{
+        display: inline-block;
+        padding: 20px 80px;
+        margin-left: 20px;
+      }
+
+      .inline-block-a a:first-of-type {
+        margin-left: 0px;
+      }
+
+      .inline-block-a {
+        text-align: center;
+      }
+
+      /* Floats and Positioning Elements */
+
+      #lesson-1 {
+        border-bottom: dashed 5px #333;
+        padding-bottom: 50px;
+      }
+
+      #lesson-2 {
+        margin-bottom: 150px;
+      }
+
+      .clear-float {
+        padding: 20px;
+        clear: both;
+      }
+
+      .fifty-percent {
+        width: 50%;
+        padding: 40px;
+      }
+
+      .center-text {
+        text-align: center;
+      }
+
+      .pre {
+        white-space: pre;
+      }
+
+      /* Positioning */
+
+      /* Fixed Positioning */
+
+      .fixed {
+        position: fixed;
+        bottom: 80px;
+        left: 40px;
+      }
+
+      .fixed.padding {
+        padding: 30px 60px;
+      }
+
+      .blue-transparent {
+        background: rgba(40, 90, 255, 0.6);
+        color: white;
+      }
+
+      /* Relative Positioning */
+
+      .relative {
+        position: relative;
+        top: 40px;
+        left: -10px;
+      }
+
+      .relative.btn {
+        width: 400px;
+      }
+
+      .btn {
+        border-radius: 10px;
+        padding: 20px 40px;
+        text-align: center;
+      }
+
+      .relative.red {
+        background: rgba(206, 74, 74, 0.6);
+      }
+
+      .absolute.btn {
+        width: 250px;
+      }
+
+      #absolute-positioning {
+        position: relative;
+      }
+
+      .absolute {
+        position: absolute;
+        top: -20px;
+        left: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>Project: Summary of Box Model, Positioning and Floats Rules</h1>
+      </header>
+      <section id="lesson-1">
+        <section id="inline">
+          <h2>Inline Elements</h2>
+
+          <p>Inline elements occupies only the space of the content. It does not take width and height values.</p>
+
+          <h3>Example:</h3>
+
+          <p>Anchor tags are normally inline elements, you see they only take up the width of their content and not the whole width of the page then the next anchor tags follow right after it.</p>
+
+          <div class="dashed box">
+            <a href="#">Home</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+          </div>
+
+          <h3>What happens if we set a margin property on an inline level element?</h3>
+
+          <p>Inline elements will only take left and right margin values.</p>
+
+          <div class="dashed box margin">
+            <a href="#">Home</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+          </div>
+
+          <p>In the example I put a margin of 30px on all sides, as you can see if you check the anchor tag in the developer tools only the left and right side of the contents are affected by the margin.</p>
+
+          <h3>What about padding?</h3>
+
+          <div class="dashed box padded">
+            <a href="#" class="green">Home</a>
+            <a href="#" class="green">Portfolio</a>
+            <a href="#" class="green">Contact</a>
+          </div>
+
+          <p>Inline elements accept padding values on all sides.</p>
+
+          <h3>Floating Inline Elements</h3>
+
+          <div class="floated-inline group margin padded dashed box">
+            <a href="#" class="green">Home</a>
+            <a href="#" class="green">Portfolio</a>
+            <a href="#" class="green">Contact</a>
+          </div>
+
+          <p>Floating inline elements will change its display value to a block level element and subject to all block level characteristics. Which means it can take margin and padding values, height and width values as well.</p>
+        </section>
+
+        <section id="block">
+          <h2>Block Elements</h2>
+
+          <p>Block level elements take up the entire width of the page and always start in a new line.It can have margin/s and padding/s. If no width is set it will expand naturally to fill its parent container. If no height is set, it will expand to fit its content.</p>
+
+          <h3>Example: (Div elements are naturally block level elements)</h3>
+
+          <div class="blue">This is a div with no width and height set.</div>
+
+          <div class="green div-height div-padding div-margin">This a div with no width but with a height of 60px, with a padding and margin of 20px around it.</div>
+
+          <div class="red div-width">This a div with a width of 90px and no height set.</div>
+
+          <p>In the first example the div just fill the entire width and just took out the height to fill its content. The second box we didn&rsquo;t set a width but it still filled the entire width and took the height of 60px plus the margin and the padding. Third box we set the width to 90 px and as expected it would do it took a height that is enough to fill its content. The texts were squished because of the reduced width so it felt the need to expand its height to accomodate its content.</p>
+
+          <h3>Floating Block Elements</h3>
+
+          <h4>Floating block elements with no width and height set.</h4>
+
+          <div class="group">
+            <div class="float-left blue border-red">Box &ndash; 1 &ndash; Floated Left</div>
+            <div class="float-right red border-red">Box &ndash; 2 &ndash; Floated Right</div>
+          </div>
+
+          <p>It floated our elements to the left and right but still on a separate block because they still took the entire width for each element, and since we didn&rsquo;t set a specific width for each divs it shrinked to the widest element within each div which in our case the texts inside it.</p>
+
+          <h4>Floating block elements with width and height set.</h4>
+
+          <div class="group">
+            <div class="float-left red width1 height1">Box &ndash; 1 &ndash; Floated Left</div>
+            <div class="float-right blue width1 height1">Box &ndash; 2 &ndash; Floated Right</div>
+          </div>
+
+          <h4>Can we change an inline element into a block element?</h4>
+
+          <p>Let&rsquo;s use the anchor tag as an example.</p>
+
+          <div class="block-nav">
+            <a href="#" class="blue">Home</a>
+            <a href="#" class="blue">About</a>
+            <a href="#" class="blue">Contact</a>
+          </div>
+
+          <p>Yes, we can change display values from a block element to inline element and vice versa. Display values can be overwritten by another display value.</p>
+        </section>
+
+        <section id="inline-block">
+          <h2>Inline&ndash;Block Elements</h2>
+
+          <p>Inline&ndash;block elements are inline elements that can take block elements properties, such as width and height. It acts similarly to a float minus the clear property.</p>
+
+          <h3>Example: Let&rsquo;s use inline&ndash;block to create a navigation.</h3>
+
+          <div class="inline-block-a">
+            <a href="#" class="blue">Home</a><!-- 
+             --><a href="#" class="blue">Portfolio</a><!-- 
+             --><a href="#" class="blue">About</a><!-- 
+             --><a href="#" class="blue">Contact</a>
+          </div>
+
+          <p>We achieved the same results as to when we float the anchor elements to give them the block elements&rsquo; properties. It&rsquo;s you get two elements in just one, you get to have the properties of inline elements and at the same time get the properties of block elements.</p>
+        </section>
+      </section>
+
+
+<!-- LESSON 2: Floats and Positioning Elements -->
+      <section id="lesson-2">
+        <header>
+          <h1>Floats and Positioning Elements</h1>
+        </header>
+
+        <section id="floats">
+          <h2>Floats</h2>
+
+          <p>A floated element is taken out of the normal flow then shifted left or right.When you float a content it becomes a block&ndash;level element.</p>
+
+          <h3>Example</h3>
+
+          <div class="group">
+            <div class="float-left red fifty-percent center-text">Box&ndash;1</div>
+            <div class="float-left blue fifty-percent center-text">Box&ndash;2</div>
+            <div class="clear-float green center-text">Box&ndash;3</div>
+          </div>
+
+          <p>Elements following a floated element will wrap around the floated element, we do not want this to happen, so I applied the &rsquo;clear: both&rsquo; property to the third div, there are 2 other properties for clear, that&rsquo;s the left and the right. I chose to clear both, just to be sure.</p>
+
+          <p>There are other methods to clear floats, one of these methods is the clearfix method:</p>
+
+          <pre>
+            <code>              
+                        elementName::after {
+                            content: " ";
+                            display:block;
+                            clear: both;
+                        }
+            </code>      
+          </pre>
+                
+          <p>Basically, you just put the ::after pseudo&ndash;element on the containing parent element of the floated contents.</p>
+        </section>
+
+        <section id="positioning">
+          <h2>Positioning</h2>
+
+          <p>Every now and then we want to position things the way we want it to be and move it around the page, and floats simply cannot do this as it can only take an element to position left or right of the page. This is where positioning comes in. There are four types of positiong:</p>
+
+          <ul>
+            <li>Static</li>
+            <li>Fixed</li>
+            <li>Relative</li>
+            <li>Absolute</li>
+          </ul>
+
+          <h2>Static Position</h2>
+
+          <p>The element renders normally on the page &ndash; this is the default position of elements on the page.</p>
+
+          <h2>Fixed Position</h2>
+
+          <p>This will allow you to put an element in the same place even when the page is scrolled. Top, Right, Bottom and Left properties are used to position this property.</p>
+
+          <p>Fixed positioned elements are taken out of the flow and does not leave a gap in the location of the page where you originally put it.</p>
+
+          <p>Notice the blue box on the bottom left side of the page. It is a fixed position element.</p>
+
+          <div class="fixed blue-transparent padding">I&rsquo;m positioned fixed</div>
+
+          <h2>Position Relative</h2>
+
+          <p>Positioned relative to its normal position. Setting the offset values will cause the element to move away from its normal position according to the values you&rsquo;ve set. However, its position in the normal flow of the document will be preserved and following texts will not wrap around it.</p>
+
+          <p>When we position an element with offset values it moves on top of the next text/elements rather than pushing it down as to what padding and margin element would do.</p>
+
+          <div class="relative red btn">I&rsquo;m a relatively positioned box!</div>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non cumque repellat sapiente vitae nihil debitis accusamus, odit, tempore id reiciendis consequatur necessitatibus veritatis, distinctio vel, cum repellendus numquam blanditiis perferendis?</p>
+
+          <section id="absolute-positioning">
+            <h2>Position Absolute</h2>
+
+            <p>When the element is positioned absolute it is taken out of the normal flow and the original space of that element in the document will not be preserved.</p>
+
+            <p>Absolutely positioned elements are moved in relation to their closest relatively positioned parent element. Should a relatively positioned parent element not exist, the absolutely positioned element will be positioned in relation to the &lt;body&gt; element.</p>
+
+            <p>Let&rsquo;s get some examples:</p>
+
+            <p>I will set the position of the section with the class of "pos&ndash;absolute" to position: relative so that the absolutely positioned element will be basing its offset values on the whole section element.</p>
+
+            <p>Notice the green box beside the Position Absolute title, it is an absolutely positioned element.</p>
+
+            <div class="absolute green btn">Absolutely Positioned Box</div>
+          </section>
+        </section>
+      </section>
+    </article>
+  </body>
+</html>
