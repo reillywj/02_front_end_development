@@ -131,6 +131,38 @@ h2 {
   margin-bottom: 25px;
 }
 
+/* Floats */
+
+.container {
+  overflow: auto;
+  margin-top: 135px;
+}
+
+.container figure {
+  float: left;
+  margin: 0 30px;
+  width: 135px;
+}
+
+figcaption {
+  padding-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #3e59b2;
+}
+
+figure a,
+figure a:visited {
+  font-size: 24px;
+  color: #3e59b2;
+  text-decoration: none;
+}
+
+figure a:hover figcaption {
+  text-decoration: underline;
+  color: #2f2840;
+}
+
 /* Footer */
 
 footer {
