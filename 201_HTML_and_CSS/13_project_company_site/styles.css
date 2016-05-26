@@ -131,6 +131,52 @@ h2 {
   margin-bottom: 25px;
 }
 
+/* Team Member Content */
+
+.exit {
+  background: transparent url('images/icon_close.png') 0 0 no-repeat;
+  content: "";
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.exit:hover {
+  background-color: #eee;
+}
+
+#team-member {
+  margin: 0 auto;
+  padding: 110px 0 145px 0;
+  background: #b2b2b2;
+}
+
+#team-member article {
+  position: relative;
+  overflow: auto;
+  text-align: justify;
+  width: 830px;
+  padding: 125px 90px 110px 90px;
+  background: white;
+}
+
+#team-member article img,
+#team-member article h2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#team-member article h2 {
+  margin: 0 0 0 30px;
+}
+
+#team-member article p {
+  margin-top: 40px;
+}
+
 /* Floats */
 
 .container {
