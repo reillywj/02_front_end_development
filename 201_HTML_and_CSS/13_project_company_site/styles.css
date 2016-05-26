@@ -1,0 +1,183 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Common Setup */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font: normal 20px 'Roboto', Helvetica, Arial, sans-serif;
+  color: #45494d;
+  background: url('images/bg_body.gif'), #2f2840;
+}
+
+header, main {
+  text-align: center;
+  min-width: 780px;
+}
+
+/* Header */
+
+nav {
+  margin: 120px 0 50px 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 45px;
+}
+nav a, nav a:visited {
+  font-size: 26px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #cacaca;
+}
+
+nav a.active {
+  color: #6db9ff;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* Main Content */
+
+main {
+  background: white;
+  padding: 120px 0 135px 0;
+}
+
+main > * {
+  width: 780px;
+  margin: 0 auto;
+}
+
+article + article {
+  margin-top: 160px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 45px 0;
+}
+
+h1:before, h1:after {
+  content: "\2022";
+  color: #2f2840;
+}
+
+h1:before {
+  padding-right: 35px;
+}
+
+h1:after {
+  padding-left :35px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3e59d2;
+  margin-bottom: 25px;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  background: #e7e7e7;
+  color: #b2b2b2;
+}
+
+footer p {
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 90px;
+}
+
+footer ul {
+  padding: 45px 0 75px 0;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0 62px;
+}
+
+.social {
+  content: "";
+  width: 46px;
+  height: 46px;
+  background: transparent url('images/icons_social-media.png') 0 0 no-repeat;
+  background-size: 46px;
+  display: block;
+  border-radius: 23px;
+}
+
+.facebook {
+  background-position: 0 -46px;
+}
+
+.mail {
+  background-position: 0 -92px;
+}
+
+.instagram {
+  background-position: 0 100%;
+}
+
+.social:hover {
+  background-color: #2f2840;
+}
+
+
