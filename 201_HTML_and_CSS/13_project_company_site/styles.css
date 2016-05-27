@@ -56,7 +56,7 @@ table {
 body {
   font: normal 20px 'Roboto', Helvetica, Arial, sans-serif;
   color: #45494d;
-  background: url('images/bg_body.gif'), #2f2840;
+  background: url('images/bg_body.gif') 0 -15% repeat, #2f2840;
 }
 
 header, main {
@@ -66,15 +66,21 @@ header, main {
 
 /* Header */
 
+header {
+  margin: 135px 0 0 0;
+}
+
 nav {
-  margin: 120px 0 50px 0;
+  margin: 115px 0 50px 0;
 }
 
 nav li {
   display: inline-block;
-  margin: 0 45px;
 }
 nav a, nav a:visited {
+  display: block;
+  width: 100%;
+  padding: 0 45px;
   font-size: 26px;
   text-transform: uppercase;
   text-decoration: none;
@@ -83,6 +89,7 @@ nav a, nav a:visited {
 
 nav a.active {
   color: #6db9ff;
+  font-weight: bold;
 }
 
 nav a:hover {
@@ -102,7 +109,7 @@ main > * {
 }
 
 article + article {
-  margin-top: 160px;
+  margin-top: 100px;
 }
 
 h1 {
@@ -221,10 +228,6 @@ article#projects {
   margin-top: 45px;
 }
 
-article#projects > article + article {
-  margin-top: 125px;
-}
-
 /* Floats */
 
 .container {
@@ -306,4 +309,8 @@ footer li {
   background-color: #2f2840;
 }
 
+/* Responsive */
 
+@media (max-width: 480px) {
+
+}
