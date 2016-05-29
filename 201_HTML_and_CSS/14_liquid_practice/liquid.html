@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Liquid Practice</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+
+      main {
+        min-width: 600px;
+        max-width: 800px;
+      }
+
+      #content, #sidebar {
+        /*float: left;*/
+        padding: 20px 30px;
+        box-sizing: border-box;
+      }
+
+      #content {
+        float: left;
+        width: 70%;
+        background: blue;
+      }
+
+      #sidebar {
+        /*width: 30%;*/
+        /*height: 150px;*/
+        /*overflow: hidden;*/
+        overflow: auto;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="content">
+        <p>This is my content box.</p>
+      </div>
+      <div id="sidebar">
+        <article>
+          <h4>The News</h4>
+          <p><time datetime="1900-12-25">25 December 1900</time></p>
+          <p>Blah blah...</p>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
