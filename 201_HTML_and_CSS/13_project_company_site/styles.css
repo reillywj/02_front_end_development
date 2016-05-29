@@ -236,7 +236,7 @@ article#projects {
 }
 
 .container figure {
-  float: left;
+  display: inline-block;
   margin: 0 30px;
   width: 135px;
 }
@@ -311,6 +311,121 @@ footer li {
 
 /* Responsive */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  header {
+    margin: 30px 0 0 0;
+  }
 
+  header img {
+    height: 180px;
+  }
+
+  header nav {
+    margin: 30px 0 30px 0;
+  }
+
+  nav a, nav a:visited {
+    padding: 0 20px;
+  }
+
+  main {
+    padding: 60px 20px 120px 20px;
+  }
+
+  #team-member article {
+    width: 100%;
+    padding: 60px 20px 60px 20px;
+  }
+
+  article#projects,
+  .project p {
+    width: 100%;
+  }
+
+  article#projects article img {
+    width: 100%;
+  }
+
+  #projects #img-app {
+    display: none;
+  }
+
+  .container figure {
+    margin: 0 20px;
+  }
+
+  footer, body, main, header, article {
+    width: 100%;
+    min-width: 200px;
+  }
+
+  footer, main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  footer p {
+    width: 100%;
+  }
+
+  footer li {
+    margin: 0 30px 0 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    margin: 0;
+    overflow: auto;
+    position: relative;
+  }
+
+  header > img {
+    display: none;
+  }
+
+  .mobile-logo {
+    float: left;
+    width: 90px;
+    height: 90px;
+    background: transparent url('images/logo.png') 0 0 no-repeat;
+    background-size: 149px auto;
+    background-position: -35px 0px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .mobile-logo:after {
+    width: 150px;
+    height: 30px;
+    background: transparent url('images/logo.png') 0 0 no-repeat;
+    background-position: 0 100%;
+    background-size: 150px auto;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 80px;
+    top: 22px;
+  }
+
+  header > nav {
+    float: right;
+    text-align: right;
+    margin: 0;
+  }
+
+  header > nav li {
+    display: block;
+    padding: 10px 0;
+  }
+
+  header > nav a {
+    padding: 0 20px 0 0;
+    font-size: .9em;
+  }
+
+  footer li {
+    margin: 0 20px 0 20px;
+  }
 }
