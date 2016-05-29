@@ -55,15 +55,16 @@ table {
 }
 
 body {
-  font: normal 10px Helvetica, Arial, sans-serif;
+  font: normal 16px Helvetica, Arial, sans-serif;
   color: white;
-  background: #333;
+  background: #131313;
+  padding: 20px;
 }
 
 /* Header */
 
 header {
-  padding: 26px 0 13px 0;
+  padding: 10px 0 13px 0;
 }
 
 h1 {
@@ -74,20 +75,32 @@ h1 {
 
 /* Main Content */
 
-section {
-  margin: 0 auto;
-  padding: 0 10px 10px 10px;
+main {
+  background: #333;
+  overflow: auto;
+  padding: 20px;
 }
 
-figure img,
+section {
+  margin: 0 auto;
+  padding: 0 10px 20px 10px;
+  min-width: 480px;
+  max-width: 960px;
+}
+
+/*figure img,
 section {
   max-width: 1200px;
-}
+}*/
 
 /* Primary Photo */
 
 #photo-primary img {
   border: 10px solid white;
+}
+
+#photo-primary figcaption {
+  padding: 10px 0 0 0;
 }
 
 /* Photos */
