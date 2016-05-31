@@ -57,12 +57,17 @@ body {
   font: normal 14px Helvetica, Arial, sans-serif;
   padding: 0 40px 40px 40px;
   min-width: 880px;
+  width: 100%;
   position: absolute;
 }
 
 body > * {
   min-width: 800px;
   max-width: 1000px;
+  margin: 0 auto;
+}
+
+header, main {
   margin: 0 auto;
 }
 
@@ -96,13 +101,15 @@ h2 {
 
 /* Products */
 
-figure {
-  background: white;
+label {
+  content: '';
   margin: 15px 2% 0 0;
-  padding: 15px;
-  height: 235px;
+  width: 23.5%;
+  display: block;
   float: left;
-  width: 23.5%
+  height: 235px;
+  padding: 15px;
+  background: white;
 }
 
 figure img {
@@ -112,15 +119,19 @@ figure img {
   display: block;
 }
 
-figure:nth-of-type(4n) {
+label:nth-of-type(4n) {
   margin-right: 0;
 }
 
-figure:nth-of-type(4n+1) {
+label:nth-of-type(4n+1) {
   clear: left;
 }
 
-figcaption {
+input:checked + figure figcaption {
+  position: relative;
+  display: block;
+  width: 100%;
+  top: 120px;
   margin: 20px 0 0 0;
 }
 
@@ -129,13 +140,26 @@ dt {
   font-size: 20px;
 }
 
-input:checked + img {
-  position: relative;
+input:checked + figure img {
+  position: fixed;
+  margin-left: -200px;
   max-width: none;
-  max-height: none;
+  max-height: 500px;
+  left: 50%;
+  top: 175px;
+  z-index: 2;
 }
 
-
+input:checked + figure:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
 
 
 
