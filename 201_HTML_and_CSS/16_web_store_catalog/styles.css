@@ -146,7 +146,7 @@ input:checked + figure img {
   max-width: none;
   max-height: 500px;
   left: 50%;
-  top: 175px;
+  top: 100px;
   z-index: 2;
 }
 
