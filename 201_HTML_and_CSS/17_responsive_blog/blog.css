@@ -51,8 +51,12 @@ table {
 
 body {
   font: normal 20px Arial, sans-serif;
-  color: #45494d;
   background: white;
+}
+
+body,
+h2 a {
+  color: #45494d;
 }
 
 /* Header */
@@ -69,6 +73,14 @@ h1 {
   color: white;
   text-transform: uppercase;
   padding: 20px 0 20px 0;
+}
+
+h1 a {
+  color: white;
+}
+
+h1 a:hover {
+  color: inherit;
 }
 
 img {
@@ -103,14 +115,22 @@ nav li a {
   padding: 5px 0;
 }
 
+a:hover {
+  text-shadow: 0.5px 0.5px 0.5px #45494d;
+}
+
 a:hover,
 nav li a:hover,
 a.active:hover {
   color: #f5dc39;
 }
 
+nav li a:hover {
+  text-shadow: none;
+}
+
 nav li a.active,
-article a {
+article p a {
   color: #50c3af;
 }
 
@@ -211,7 +231,6 @@ h3 {
 }
 
 aside article li {
-  /*text-indent: 10px;*/
   clear: both;
 }
 
@@ -219,6 +238,7 @@ aside article li a {
   display: block;
   width: 100%;
   height: auto;
+  color: inherit;
 }
 
 aside article li:nth-of-type(n+2) a,
@@ -229,10 +249,10 @@ aside article li:nth-of-type(n+2) {
 aside article li:before {
   content: '\003e';
   text-align: center;
-  width: 12px;
-  height: 12px;
-  padding: 2px;
-  font-size: 10px;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  font-size: 9px;
   display: block;
   float: left;
   color: white;
