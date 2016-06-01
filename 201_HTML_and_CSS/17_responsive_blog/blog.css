@@ -68,7 +68,7 @@ body > header {
 }
 
 h1 {
-  font: normal 50px Helvetica, Arial, sans-serif;
+  font-size: 50px;
   letter-spacing: 7px;
   color: white;
   text-transform: uppercase;
@@ -85,8 +85,13 @@ h1 a:hover {
 
 header img {
   width: 100%;
-  max-width: 500px;
   height: auto;
+}
+
+header img,
+header nav {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 nav {
@@ -312,7 +317,6 @@ footer p {
 
 /* Styles when not mobile or tablet width */
 @media (min-width: 601px) {
-  header nav,
   main,
   footer {
     max-width: 1000px;
