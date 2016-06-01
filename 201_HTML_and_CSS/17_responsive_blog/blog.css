@@ -211,6 +211,7 @@ form button[disabled] {
 aside {
   font-size: 14px;
   padding: 20px 0;
+  color: #787b80;
 }
 
 aside section {
@@ -276,3 +277,35 @@ footer {
 footer p {
   padding: 20px 0;
 }
+
+/* Styles when tablet */
+
+@media (min-width: 481px) and (max-width: 600px) {
+  aside {
+    background: #f6f7f8;
+    overflow: auto;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 0 20px;
+  }
+
+  aside section {
+    float: left;
+    width: 50%;
+    display: block;
+    box-sizing: border-box;
+  }
+}
+
+/* Styles when not mobile screen width */
+@media (min-width: 481px) {
+  /* Nav Items 4 Across */
+  nav li {
+    width: 25%;
+  }
+
+  aside section:nth-of-type(n+2) {
+  margin: 0;
+}
+}
+
