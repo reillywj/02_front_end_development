@@ -170,17 +170,18 @@ main > section > article {
   padding: 20px 0;
 }
 
-main > section > article > p {
+main > section article > p {
   line-height: 28px;
 }
 
 /* Previous and Next Page Buttons */
 
-form button {
+body > main article label,
+button {
   font-size: 14px;
   color: white;
-  padding: 8px 0;
-  width: 85px;
+  padding: 8px 20px;
+  min-width: 85px;
   border: none;
   border-radius: 16px;
   background: #50c3af;
@@ -188,7 +189,7 @@ form button {
   float: left;
 }
 
-form button:nth-of-type(2) {
+button:nth-of-type(2) {
   margin-left: 30px;
 }
 
@@ -198,18 +199,88 @@ form:after {
   clear: both;
 }
 
-form button:hover {
+body > main article label:hover,
+button:hover {
   background: #f5dc39;
   color: #45494d;
   font-weight: bold;
   cursor: pointer;
 }
 
-form button[disabled] {
+button[disabled] {
   background: #d2d5da;
   color: white;
   font-weight: normal;
   cursor: auto;
+}
+
+/* Blog Post a Comment */
+
+article > section,
+body > main footer,
+#new_comment {
+  margin: 20px 0 0 0;
+}
+
+#comments article header img {
+  width: auto;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+  margin-right: 5px;
+}
+
+#comments article + article {
+  margin-top: 40px;
+}
+
+body > main footer input,
+body > main footer textarea {
+  display: block;
+  width: 100%;
+}
+
+body > main article > footer label {
+  display: block;
+  float: none;
+  width: 120px;
+  text-align: center;
+}
+
+#new_comment legend {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#new_comment button {
+  margin-top: 20px;
+}
+
+#new_comment textarea {
+  resize: none;
+}
+
+#new_comment input,
+#new_comment textarea {
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  padding: 5px;
+  /*color: #cccccc;*/
+}
+
+#new_comment {
+  display: none;
+}
+
+#comment:checked ~ #new_comment {
+  display: block;
+}
+
+#comment {
+  display: none;
 }
 
 /* Aside */
@@ -273,14 +344,14 @@ aside p {
 }
 
 /* Footer */
-footer {
+body > footer {
   border-top: 2px solid #d0d0d0;
   margin: 20px;
   color: 7e8287;
   font-size: 12px;
 }
 
-footer p {
+body > footer p {
   padding: 20px 0;
 }
 
@@ -318,12 +389,12 @@ footer p {
 /* Styles when not mobile or tablet width */
 @media (min-width: 601px) {
   main,
-  footer {
+  body > footer {
     max-width: 1000px;
     margin: 0 auto;
   }
 
-  header, main, footer {
+  header, main, body > footer {
     padding: 0;
   }
 
@@ -373,12 +444,17 @@ footer p {
     padding: 20px 20px 50px 20px;
   }
 
-  footer {
+  body > footer {
     margin-top: 50px;
   }
 
-  footer p {
+  body > footer p {
     padding: 20px;
+  }
+
+  article > section,
+  body > main footer {
+    margin: 90px 0 0 0;
   }
 }
 

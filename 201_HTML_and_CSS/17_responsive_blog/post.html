@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Responsive Blog: Index</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="blog.css">
+  </head>
+  <body>
+    <header>
+      <h1><a href='index.html'>Blog Title</a></h1>
+      <img src="logo.png">
+      <nav>
+        <ul>
+          <li><a href="index.html" class='active'>Home</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <article>
+          <header>
+            <h2><a href="">Post Headline</a></h2>
+            <p>Written by <a href="#">Shane Riley</a> on <time datetime='2014-02-15'>Feb. 15, 2014</time></p>
+          </header>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut alquip ex ea commodo consequat. Duis aute irure dolor in rprehenderit.</p>
+
+          <section id='comments'>
+            <header>
+              <h2>Comments</h2>
+            </header>
+
+            <article>
+              <header>
+                <p><a href=''><img src='img_kevin.jpg'>Kevin</a> on <time datetime='20140215'>Feb. 15, 2014</time></p>
+              </header>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </article>
+            <article>
+              <header>
+                <p><a href=''><img src='img_chris.jpg'>Chris</a> on <time datetime='20140215'>Feb. 15, 2014</time></p>
+              </header>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </article>
+          </section>
+
+          <footer>
+            <input id='comment' type='checkbox' name='comment' hidden>
+            <label for='comment'>Post a Comment</label>
+            
+            <form id='new_comment' action='#' method='post'>
+              <fieldset>
+                <legend>Post Comments</legend>
+                <input type='text' placeholder='Enter your Name' required>
+                <input type='email' placeholder='Enter your Email Address' required>
+                <textarea placeholder='Enter your Comments' required rows='6'></textarea>
+              </fieldset>
+              <button type='submit'>Submit</button>
+            </form>
+          </footer>
+        </article>
+      </section>
+      <aside>
+        <section>
+          <article>
+            <h3>Categories</h3>
+            <ul>
+              <li><a href="">HTML</a></li>
+              <li><a href="">CSS</a></li>
+              <li><a href="">JavaScript</a></li>
+              <li><a href="">Other</a></li>
+            </ul>
+          </article>
+        </section>
+        <section>
+          <article>
+            <h3>About</h3>
+            <p>Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisq.</p>
+          </article>
+        </section>
+      </aside>
+    </main>
+    <footer>
+      <p>&copy; 2016 Blog Title</p>
+    </footer>
+  </body>
+</html>
