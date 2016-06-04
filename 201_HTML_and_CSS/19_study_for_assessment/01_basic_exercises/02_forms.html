@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Exercises: Forms</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <section>
+      <header><h1>Exercise 1</h1></header>
+      <form method='post' action='/some_path'>
+        <fieldset>
+          <dl>
+            <dt><label for='name'>Your Name</label></dt>
+            <dd><input type='text' name='name' required></dd>
+
+            <dt><label for='email'>Email</label></dt>
+            <dd><input type='email' name='email' required></dd>
+
+            <dt><label for='phone'>Phone Number</label></dt>
+            <dd><input type='tel' name='phone' required></dd>
+
+            <dt><label for='message'>Message</label></dt>
+            <dd><textarea name='message' rows='5' cols='100' required></textarea></dd>
+          </dl>
+          <button type='submit'>Send Message</button>
+          <button type='reset'>Clear</button>
+        </fieldset>
+      </form>
+    </section>
+    <section>
+      <header><h1>Exercise 2</h1></header>
+      <form action='' method='get'>
+        <fieldset>
+          <label>
+            Search for: 
+            <input type='search' name='search' required>
+          </label>
+          <label><input type='radio' name='media' value='tv'>TV</label>
+          <label><input type='radio' name='media' value='movies'>Movies</label>
+          <label><input type='radio' name='media' value='music'>Music</label>
+          <button type='submit'>Search</button>
+        </fieldset>
+      </form>
+    </section>
+    <section>
+      <header><h1>Exercise 3</h1></header>
+      <form action='' method='post'>
+        <fieldset>
+          <dl>
+            <dt><label for='movie'>Movie</label></dt>
+            <dd>
+              <select name='movie'>
+                <option>Looper</option>
+                <option>Frozen</option>
+                <option>Tommy Boy</option>
+              </select>
+            </dd>
+            <dt><label for='rating'>Rating</label></dt>
+            <dd><input type='range' name='rating' min='1' max='5' step='1' value='3'></dd>
+          </dl>
+          <label><input type='checkbox' name='favorite' checked>Add to my favorites</label>
+          <button type='submit'>Rate Movie</button>
+        </fieldset>
+      </form>
+    </section>
+  </body>
+</html>

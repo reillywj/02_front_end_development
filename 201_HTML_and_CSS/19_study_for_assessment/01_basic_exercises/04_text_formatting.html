@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Exercises: Text Formatting</title>
+    <meta charset='utf-8'>
+    <style type="text/css">
+      #ex-1 p {
+        font: italic normal 16px/140% Helvetica, Arial, sans-serif;
+      }
+      #ex-2 > article header h1 {
+        font: bold 24px Georgia, serif;
+      }
+      #ex-2 > article {
+        font: normal 14px Helvetica, Arial, sans-serif;
+      }
+
+      #ex-2 > article p {
+        line-height: 150%;
+      }
+
+      #ex-2 > article code {
+        font: italic normal 1em Courier, monospace;
+        text-decoration: underline;
+      }
+
+      #ex-3 p {
+        font: normal 18px Georgia, serif;
+      }
+
+      #ex-3 mark {
+        font-family: Courier, monospace;
+        font-size: 12px;
+      }
+
+      #ex-3 strong {
+        font-size: 15px;
+      }
+
+      #ex-3 em {
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <section id='ex-1'>
+      <header><h1>Exercise 1</h1></header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in enim sagittis nisi vulputate tristique. Etiam at lacus eu quam auctor vestibulum. Etiam viverra consectetur nibh, eu varius sem feugiat vel. Nunc at turpis at sem pharetra elementum ut in odio. Ut imperdiet nulla varius nisl placerat, eget finibus justo dapibus. Suspendisse est arcu, consectetur nec pulvinar quis, molestie non diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+    </section>
+    <section id='ex-2'>
+      <header><h1>Exercise 2</h1></header>
+      <article>
+        <header><h1>Finessing `feColorMatrix`</h1></header>
+        <p>Harness the power of <code>feColorMatrix</code> to create detailed filters, with Una Kravets as your guide.</p>
+      </article>
+    </section>
+    <section id='ex-3'>
+      <header><h1>Exercise 3</h1></header>
+      <p>That episode was <mark>un<strong>be<em>lieve</em></strong>able</mark>!</p>
+    </section>
+  </body>
+</html>
