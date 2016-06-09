@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Layout Practice</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <style type="text/css">
+      *,*:after,*:before {box-sizing: border-box;}
+
+      /* Basic */
+      body {
+        font: normal 20px Helvetica, Arial, sans-serif;
+      }
+      body, a, a:visited {
+        color: black;
+      }
+      a {
+        text-decoration: none;
+        display: block;
+      }
+      a:hover {
+        color: white;
+        cursor: pointer;
+        background: blue;
+      }
+
+      /* Body */
+      body {
+        margin: 0 0 0 170px;
+      }
+
+      /* Header */
+      header {
+        text-align: center;
+        padding: 0 20px 10px 10px;
+        background: green;
+      }
+
+      body > header h1 {
+        font: bold italic 2.5em Helvetica, Arial, sans-serif;
+        padding: 10px 0 20px 0;
+      }
+
+      /* Nav */
+      nav li{
+        display: block;
+        text-align: center;
+      }
+
+      header > nav li {
+        width: 32%;
+        float: left;
+      }
+
+      header > nav li + li {
+        margin-left: 2%;
+      }
+
+      header > nav ul:after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+
+      nav a {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px 0;
+      }
+
+      nav.fixed {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 170px;
+        background: red;
+        padding: 200px 10px 0 10px;
+      }
+
+      nav.fixed li {
+        margin: 0 auto;
+      }
+
+      nav.fixed li + li {
+        margin-top: 20px;
+      }
+
+      /* Main Styling */
+      main {
+        padding: 10px;
+      }
+
+      main p {
+        line-height: 1.5em;
+      }
+      main p + p {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class='fixed'>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Layout Practice</h1>
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique mauris metus, ac iaculis odio ornare vel. Integer sit amet dapibus risus. Aenean tristique neque libero, at euismod augue semper id. Sed quam ligula, hendrerit vel justo pulvinar, congue ullamcorper urna. Suspendisse pellentesque hendrerit egestas. Morbi dapibus justo vehicula neque condimentum, vel cursus eros vestibulum. Aenean hendrerit ligula non orci euismod egestas. In mauris dolor, volutpat vel nisi et, hendrerit ullamcorper libero. Vivamus pellentesque sem sit amet nulla ultricies pretium. Curabitur sagittis sagittis mauris at pulvinar.</p>
+
+      <p>Duis ultricies vel nulla volutpat tincidunt. Donec venenatis aliquam magna, at fermentum augue finibus non. Suspendisse interdum consequat tempus. Sed a auctor nisi, quis suscipit odio. Aliquam eu tristique urna, ut gravida nunc. Nullam eu tempor massa. Vestibulum viverra mi a nisl luctus auctor. Nam ligula erat, hendrerit et sodales eget, suscipit a velit. Ut leo velit, venenatis ut ultrices ut, tempor porttitor nulla. Fusce facilisis nisi eget sem bibendum efficitur. Aliquam bibendum orci sit amet velit tristique faucibus. Proin lacus nisi, viverra id tortor ac, sollicitudin dignissim augue. Etiam magna magna, volutpat in bibendum sed, ullamcorper ac ante. Morbi at nibh vel nunc pellentesque luctus sit amet et erat. Sed et est sit amet est pretium volutpat. Donec condimentum elementum turpis, sit amet auctor metus consectetur ut.</p>
+
+      <p>Nullam accumsan magna sed mauris sollicitudin, eget pretium nunc laoreet. Vestibulum sollicitudin euismod nibh non ullamcorper. Etiam eros ipsum, posuere rutrum lobortis non, sollicitudin non orci. Maecenas sed luctus ante. Pellentesque consectetur ex in mollis efficitur. Quisque in nisi luctus, pellentesque massa in, pharetra erat. Nunc vel quam sed justo hendrerit molestie eu nec sem. Aenean eu justo finibus, facilisis sem et, sodales nibh. Praesent id consectetur lacus. Nam sit amet orci mauris. Vestibulum in vulputate tortor. Vestibulum porta neque vel mi commodo, vel vehicula quam euismod. Pellentesque vel libero quis ante elementum porta. Aenean consequat, justo pretium gravida condimentum, ligula magna condimentum sapien, at bibendum eros urna id ex.</p>
+
+      <p>Morbi scelerisque libero eget mi ultricies, vel luctus lorem tincidunt. Sed venenatis non lorem sit amet pellentesque. Phasellus vel velit vitae tortor vulputate congue a at odio. Donec eu varius dui. Sed tincidunt est sed sollicitudin lobortis. Integer porta faucibus placerat. Nunc eget lacus eget turpis efficitur pretium ac quis ipsum. Pellentesque eleifend rhoncus turpis, eu venenatis risus blandit sed. Sed hendrerit lacus quis auctor tempus. Aliquam in urna urna. Nunc rutrum justo ac leo viverra, non tempor arcu malesuada. Vivamus placerat congue nisl, eget tempus urna sodales at. Vivamus vitae ante porttitor, vestibulum felis vel, blandit tellus. Pellentesque elementum, ipsum vel ullamcorper iaculis, libero dui rutrum enim, id rutrum metus libero vitae nibh. Phasellus id ligula ut elit venenatis auctor.</p>
+
+      <p>Morbi ut lacinia risus, eget accumsan tortor. Proin sapien lectus, scelerisque sit amet ante ut, condimentum placerat mauris. Ut dictum risus fermentum, dictum ipsum eget, vestibulum justo. Nullam consectetur metus ut lorem tincidunt commodo. Integer arcu sem, eleifend non turpis in, maximus faucibus eros. In hac habitasse platea dictumst. Mauris sed nulla euismod, accumsan ex nec, faucibus augue. Praesent aliquam eros ut feugiat rutrum. Morbi porta sem odio, cursus laoreet mauris consectetur nec. Nullam hendrerit quam non rhoncus pretium. Ut orci metus, posuere a tellus id, accumsan sollicitudin augue. In maximus, mauris et faucibus laoreet, nibh urna tincidunt odio, in hendrerit orci velit vitae lacus.</p>
+    </main>
+
+    <footer>
+
+    </footer>
+  </body>
+</html>
