@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Exercise: Contact Form</title>
+    <meta charset='utf-8'>
+    <style type="text/css">
+      *, *:before, *:after {box-sizing: border-box;}
+      body {
+        font: normal 20px Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      body > header,
+      body > section {
+        max-width: 800px;
+        width: 80%;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+
+      form { overflow: auto; }
+
+      fieldset + fieldset { margin-top: 20px; }
+
+      input, select, textarea {
+        font-size: 0.8em;
+        padding: 5px;
+      }
+
+      input, textarea { width: 100%;}
+      textarea {
+        height: 200px;
+        resize: none;
+      }
+      input[type='color'] {
+        width: 50%;
+        height: 50px;
+        margin-left: -25%;
+        position: relative;
+        left: 50%;
+      }
+
+      dt, dd {
+        margin: 0;
+        padding: 0;
+      }
+      dt + dd + dt { margin-top: 20px; }
+
+      dt + dd { margin-top: 10px; }
+
+      button {
+        padding: 10px 40px;
+        margin: 20px 10%;
+        width: 30%;
+        background: #49f;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        display: block;
+        float: left;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background: #04f;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header><h1>Exercise: Contact Form</h1></header>
+    <section>
+      <h1>Contact Information</h1>
+      <form action='' method='post'>
+        <fieldset>
+          <legend>Primary Information</legend>
+          <dl>
+            <dt><label for='first_name'>First Name</label></dt>
+            <dd><input type='text' name='first_name' id='first_name' required placeholder='First Name'></dd>
+
+            <dt><label for='last_name'>Last Name</label></dt>
+            <dd><input type='text' name='last_name' id='last_name' required placeholder='Last Name'></dd>
+
+            <dt><label for='email'>Email Address</label></dt>
+            <dd><input type='email' name='email' autocomplete='off' autocapitalize='none' autocorrect='off' placeholder='Email' inputmode='email'></dd>
+
+            <dt><label for='city'>City</label></dt>
+            <dd><input type='text' name='city' id='city' placeholder='City'></dd>
+
+            <dt><label for='state'>State</label></dt>
+            <dd>
+              <select name="state" id='state'>
+                <option>AK</option>
+                <option>AL</option>
+                <option>AR</option>
+                <option>AZ</option>
+                <option>CA</option>
+                <option>CO</option>
+                <option>CT</option>
+                <option>DC</option>
+                <option>DE</option>
+                <option>FL</option>
+                <option>GA</option>
+                <option>HI</option>
+                <option>IA</option>
+                <option>ID</option>
+                <option>IL</option>
+                <option>IN</option>
+                <option>KS</option>
+                <option>KY</option>
+                <option>LA</option>
+                <option>MA</option>
+                <option>MD</option>
+                <option>ME</option>
+                <option>MI</option>
+                <option>MN</option>
+                <option>MO</option>
+                <option>MS</option>
+                <option>MT</option>
+                <option>NC</option>
+                <option>ND</option>
+                <option>NE</option>
+                <option>NH</option>
+                <option>NJ</option>
+                <option>NM</option>
+                <option>NV</option>
+                <option>NY</option>
+                <option>OH</option>
+                <option>OK</option>
+                <option>OR</option>
+                <option>PA</option>
+                <option>RI</option>
+                <option>SC</option>
+                <option>SD</option>
+                <option>TN</option>
+                <option>TX</option>
+                <option>UT</option>
+                <option>VA</option>
+                <option>VT</option>
+                <option>WA</option>
+                <option>WI</option>
+                <option>WV</option>
+                <option>WY</option>
+              </select>
+            </dd>
+
+            <dt><label for='zip'>ZIP</label></dt>
+            <dd><input type='text' textmode='numeric' maxlength='5' pattern='(\d{5})' placeholder='e.g. 10101'></dd>
+          </dl>
+        </fieldset>
+        <fieldset>
+          <legend>Other Information</legend>
+          <dl>
+            <dt><label for='color_preference'>Which of these colors do you most prefer?</label></dt>
+            <dd><input type='color' name='color_preference' id='color_preference' value='#19aaff'></dd>
+
+            <dt><label for='web_tech'>What web technologies do you want to hear more about?</label></dt>
+            <dd>
+              <select name='web_tech' id='web_tech' multiple size='7'>
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JavaScript</option>
+                <option>Ruby</option>
+                <option>Rails</option>
+                <option>Python</option>
+                <option>Django</option>
+              </select>
+            </dd>
+          </dl>
+        </fieldset>
+        <fieldset>
+          <legend>Comments</legend>
+          <textarea placeholder='Add comments here...'></textarea>
+        </fieldset>
+        <input type='hidden' name='date_submitted' id='date_submitted' value='2016-06-06'>
+        <button type='submit'>Submit</button>
+        <button type='reset'>Reset</button>
+      </form>
+    </section>
+  </body>
+</html>

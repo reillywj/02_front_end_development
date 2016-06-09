@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Project: Catalog</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <style type="text/css">
+      *, *:before, *:after { box-sizing: border-box; }
+      body {
+        background: #ffd505;
+        font: normal 14px Helvetica, Arial, sans-serif;
+        color: #1b1b1d;
+        padding: 0 5px 5px 5px;
+      }
+
+      body > header {
+        background: #047ec1;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        min-height: 70px;
+        padding: 28px;
+        margin: 0 0 30px 0;
+      }
+
+      body > header h1 { color: white;}
+
+      header h1 { font-size: 2em; font-weight: bold; }
+
+      header {text-align: center;}
+
+      section header h1 { padding-bottom: 30px;}
+
+      section {
+        background: #ececec;
+        padding: 30px 28px 40px 28px;
+      }
+
+      h2 {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 24px 0 6px 0;
+      }
+
+      .product {
+        width: 90%;
+        max-width: 330px;
+        margin: 0 auto;
+        padding: 16px;
+        background: white;
+      }
+
+      .product + .product {
+        margin: 18px auto 0 auto;
+      }
+
+      .product img {
+        margin: 0 auto;
+        display: block;
+        max-width: 100%;
+      }
+
+      .product, .product img {
+        /*border: 1px solid black;*/
+      }
+
+      input[type='checkbox'] { display: none; }
+      input:checked ~ label img {
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        margin-left: -200px;
+        width: 400px;
+        max-height: none;
+        height: auto;
+        z-index: 2;
+      }
+
+      label {
+        display: block;
+        content: "";
+        min-height: 140px;
+      }
+
+      input:checked ~ label:before {
+        display: block;
+        content: "";
+        background: rgba(0,0,0, 0.5);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      img:hover {cursor: pointer;}
+
+      @media (min-width: 769px) {
+        header { text-align: left;}
+
+        body {
+          padding: 0 0 40px 0;
+        }
+
+        body > header,
+        body > section {
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        section {
+          overflow: auto;
+        }
+
+        .float-left {
+          float: left;
+          height: 235px;
+          width: 23.12%;
+        }
+
+        .float-left + .float-left {
+          margin-left: 2.5%;
+        }
+
+        .float-left:nth-of-type(4n+1){
+          margin-left: 0;
+        }
+
+        .product + .product { margin-top: 0;}
+
+        .float-left:nth-of-type(n+5) {
+          margin-top: 15px;
+        }
+
+        .product img {
+          max-height: 140px;
+          width: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Paramiicio</h1>
+    </header>
+    <section>
+      <header><h1>All Products</h1></header>
+      <div class='float-left product'>
+        <div class='img'>
+          <input type='checkbox' name='aurelia' id='aurelia'>
+          <label for='aurelia'>
+            <img src="images/aurelia.jpg" alt='Aurelia' title='Aurelia: $12.99'>
+          </label>
+        </div>
+        <h2>Aurelia</h2>
+        <p>$12.99</p>
+      </div>
+      <div class='float-left product'>
+        <div class='img'>
+          <input type='checkbox' name='polycaryum' id='polycaryum'>
+          <label for='polycaryum'>
+            <img src="images/polycaryum.jpg" alt='Polycaryum' title='Polycaryum: $12.99'>
+          </label>
+        </div>
+        <h2>Polycaryum</h2>
+        <p>$12.99</p>
+      </div>
+      <div class='float-left product'>
+        <div class='img'>
+          <input type='checkbox' name='chlorelligerum' id='chlorelligerum'>
+          <label for='chlorelligerum'>
+            <img src="images/chlorelligerum.jpg" alt='Chlorelligerum' title='Chlorelligerum: $12.99'>
+          </label>
+        </div>
+        <h2>Chlorelligerum</h2>
+        <p>$12.99</p>
+      </div>
+      <div class='float-left product'>
+        <div class='img'>
+          <input type='checkbox' name='sonneborni' id='sonneborni'>
+          <label for='sonneborni'>
+            <img src="images/sonneborni.jpg" alt='Sonneborni' title='Sonneborni: $12.99'>
+          </label>
+        </div>
+        <h2>Sonneborni</h2>
+        <p>$12.99</p>
+      </div>
+      <div class='float-left product'>
+        <div class='img'>
+          <input type='checkbox' name='ugandae' id='ugandae'>
+          <label for='ugandae'>
+            <img src="images/ugandae.jpg" alt='Ugandae' title='Ugandae: $12.99'>
+          </label>
+        </div>
+        <h2>Ugandae</h2>
+        <p>$12.99</p>
+      </div>
+      <div class='float-left product'>
+        <div class='img'>
+          <input type='checkbox' name='woodruffi' id='woodruffi'>
+          <label for='woodruffi'>
+            <img src="images/woodruffi.jpg" alt='Woodruffi' title='Woodruffi: $12.99'>
+          </label>
+        </div>
+        <h2>Woodruffi</h2>
+        <p>$12.99</p>
+      </div>
+    </section>
+  </body>
+</html>

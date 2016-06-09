@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Exercises: Forms</title>
+    <meta charset='utf-8'>
+  </head>
+
+  <body>
+    <header><h1>Exercises: Forms</h1></header>
+    <section>
+      <header><h1>Exercises 1-2: Contact Form</h1></header>
+      <form action='/contact' method='post'>
+        <fieldset>
+          <legend>Contact</legend>
+          <dl>
+            <dt><label for='first_name'>First Name</label></dt>
+            <dd><input type='text' name='first_name' id='first_name' placeholder='First Name' required></dd>
+            <dt><label for='last_name'>Last Name</label></dt>
+            <dd><input type='text' name='last_name' id='last_name' placeholder='Last Name' required></dd>
+            <dt><label for='email'>Email</label></dt>
+            <dd><input type='email' inputmode='email' name='email' id='email' placeholder='Email' autocapitalize='none' autocomplete='off' autocorrect='off' required></dd>
+            <dt><label for='phone'>Phone Number</label></dt>
+            <dd>
+              <input type='tel' inputmode='tel' name='phone' id='phone' placeholder='Phone'>
+              <select name='phone_type' id='phone_type'>
+                <option selected value='home'>Home</option>
+                <option value='business'>Business</option>
+                <option value='mobile'>Mobile</option>
+              </select>
+            </dd>
+          </dl>
+          <button type='submit'>Submit</button>
+          <button type='reset'>Clear</button>
+        </fieldset>
+      </form>
+    </section>
+    <section>
+      <header><h1>Exercise 3: News Article Filter</h1></header>
+      <form action='filter' method='get'>
+        <fieldset>
+          <legend>News Filter</legend>
+          <h1>Category</h1>
+          <ul>
+            <li>
+              <label><input type='radio' name='category' value='core'> Core</label>
+            </li>
+            <li>
+              <label><input type='radio' name='category' value='plugins'> Plugins and Libraries</label>
+            </li>
+            <li>
+              <label><input type='radio' name='category' value='conventions'> Conventions</label>
+            </li>
+            <li>
+              <label><input type='radio' name='category' value='reviews'> Reviews</label>
+            </li>
+            <li>
+              <label><input type='radio' name='category' value='opinion'> Opinion</label>
+            </li>
+            <li>
+              <label><input type='radio' name='category' value='people'> People</label>
+            </li>
+          </ul>
+          <h1>Tag</h1>
+          <ul>
+            <li>
+              <label><input type='checkbox' name='tag' value='html'> HTML</label>
+            </li>
+            <li>
+              <label><input type='checkbox' name='tag' value='css'> CSS</label>
+            </li>
+            <li>
+              <label><input type='checkbox' name='tag' value='javascript'> JavaScript</label>
+            </li>
+            <li>
+              <label><input type='checkbox' name='tag' value='ruby'> Ruby</label>
+            </li>
+            <li>
+              <label><input type='checkbox' name='tag' value='rails'> Rails</label>
+            </li>
+            <li>
+              <label><input type='checkbox' name='tag' value='python'> Python</label>
+            </li>
+            <li>
+              <label><input type='checkbox' name='tag' value='Django'> Django</label>
+            </li>
+          </ul>
+          <button type='submit'>Filter</button>
+        </fieldset>
+      </form>
+    </section>
+    <section>
+      <header><h1>Exercises 4 and 5: News Article Filter Dropdowns and Reset</h1></header>
+      <form action='filter' method='get'>
+        <fieldset>
+          <legend>News Filter</legend>
+          <dl>
+            <dt><label for='category'>Category</label></dt>
+            <dd>
+              <select name='category' id='category'>
+                <option value='core'>Core</option>
+                <option value='plugins'>Plugins and Libraries</option>
+                <option value='conventions'>Conventions</option>
+                <option value='review'>Reviews</option>
+                <option value='opinion'>Opinion</option>
+                <option value='people'>People</option>
+              </select>
+            </dd>
+            <dt><label for='tags'>Tags</label></dt>
+            <dd>
+              <select name='tags' id='tags' multiple size='7'>
+                <option value='html'>HTML</option>
+                <option value='css'>CSS</option>
+                <option value='javascript'>JavaScript</option>
+                <option value='ruby'>Ruby</option>
+                <option value='rails'>Rails</option>
+                <option value='python'>Python</option>
+                <option value='django'>Django</option>
+              </select>
+            </dd>
+          </dl>
+
+          <button type='submit'>Filter</button>
+          <button type='reset'>Reset</button>
+        </fieldset>
+      </form>
+    </section>
+  </body>
+</html>

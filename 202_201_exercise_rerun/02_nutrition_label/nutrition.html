@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Exercise: Nutrition Facts Label</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style type="text/css">
+      *, *:before, *:after { box-sizing: border-box; }
+      body { 
+        padding: 5px;
+        font: normal 20px Helvetica, Arial, sans-serif;
+      }
+
+      body > header {
+        text-align: center;
+      }
+
+      body > header h1 {
+        font-size: 2.8em;
+        font-weight: bold;
+        padding: 10px 0 30px 0;
+      }
+
+      body > header, body > section {
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      body > section {
+        max-width: 500px;
+        border: 2px solid black;
+        padding: 5px;
+      }
+
+      .label header { border-bottom: 20px solid black;}
+
+      .label header h2 {
+        font-size: 2.5em;
+        font-weight: 900;
+      }
+
+      .label h3 {
+        font-size: 0.8em;
+        font-weight: bold;
+        border-bottom: 1px solid black;
+        padding: 5px 0;
+      }
+
+      .label dl { border-bottom: 10px solid black; }
+
+      .label dl:after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+
+      .label dl > * {
+        float: left;
+        width: 50%;
+      }
+
+      .label dd { text-align: right; }
+
+      strong { font-weight: bold; font-size: 1.2em;}
+
+      em { font-style: italic;}
+
+      table { width: 100%;}
+
+      thead th {
+        font-size: 0.95em;
+        font-weight: bold;
+        text-align: right;
+      }
+
+      tbody th {
+        text-align: left;
+      }
+
+      tbody th span { font-weight: normal;}
+      tbody td:last-of-type { text-align: right;}
+
+      .indent { padding-left: 20px;}
+
+      thead tr, tbody tr { border-bottom: 1px solid black;}
+
+      tr { line-height: 1.5em;}
+
+      .table-break { border-bottom: 20px solid black;}
+
+      .footnote {
+        padding: 15px 0;
+        border-bottom: none;
+      }
+      
+      table td[colspan='2'] p {
+        text-align: left;
+        padding: 0 0 0 12px;
+        margin: 10px 0;
+        line-height: 1.25em;
+      }
+
+      .footnote td p:before {
+        content: "*";
+        margin: 0 2px 0 -9px;
+      }
+
+      table td[colspan='2'] p,
+      .small *,
+      .small tr td:last-of-type {
+        font-size: 0.95em;
+      }
+
+      .small *,
+      .small tr td:last-of-type {
+        font-weight: normal;
+        text-align: left;
+      }
+
+      .small tbody * {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Nutrition Facts Label Exercise</h1></header>
+    <section class='label'>
+      <header>
+        <h2>Nutrition Facts</h2>
+        <p>Serving Size 2/3 cup (55g)</p>
+        <p>Servings Per Container About 8</p>
+      </header>
+      <h3>Amount Per Serving</h3>
+      <dl>
+        <dt><strong>Calories</strong> 230</dt>
+        <dd>Calories from Fat 40</dd>
+      </dl>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th scope='column'>% Daily Value*</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope='row'><strong>Total Fat</strong> 8g</th>
+            <td><strong>12</strong>%</td>
+          </tr>
+          <tr>
+            <td class='indent'>Saturated Fat 1g</td>
+            <td><strong>5</strong>%</td>
+          </tr>
+          <tr>
+            <td class='indent'><em>Trans</em> Fat 0g</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope='row'><strong>Cholesterol</strong> 0mg</th>
+            <td><strong>0</strong>%</td>
+          </tr>
+          <tr>
+            <th scope='row'><strong>Sodium</strong> 160mg</th>
+            <td><strong>7</strong>%</td>
+          </tr>
+          <tr>
+            <th scope='row'><strong>Total Carbohydrate</strong> 37g</th>
+            <td><strong>12</strong>%</td>
+          </tr>
+          <tr>
+            <td class='indent'>Dietary Fiber 4g</td>
+            <td><strong>16</strong>%</td>
+          </tr>
+          <tr>
+            <td class='indent'>Sugars 1g</td>
+            <td></td>
+          </tr>
+          <tr class='table-break'>
+            <th scope='row'><strong>Protein</strong> 3g</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope='row'>Vitamin A</th>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <th scope='row'>Vitamin C</th>
+            <td>8%</td>
+          </tr>
+          <tr>
+            <th scope='row'>Calcium</th>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <th scope='row'>Iron</th>
+            <td>45%</td>
+          </tr>
+          <tr class='footnote'>
+            <td colspan='2'><p>Percent Daily Values are based on a 2,000 calorie diet. Your daily value may be higher or lower depending on your calorie needs.</p></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class='small'>
+        <thead>
+          <tr>
+            <th scope='column'></th>
+            <th scope='column'>Calories:</th>
+            <th>2,000</th>
+            <th>2,500</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Total Fat</th>
+            <td>Less than</td>
+            <td>65g</td>
+            <td>80g</td>
+          </tr>
+          <tr>
+            <th class='indent'>Sat Fat</th>
+            <td>Less than</td>
+            <td>20g</td>
+            <td>25g</td>
+          </tr>
+          <tr>
+            <th>Cholesterol</th>
+            <td>Less than</td>
+            <td>300mg</td>
+            <td>300mg</td>
+          </tr>
+          <tr>
+            <th>Sodium</th>
+            <td>Less than</td>
+            <td>2,400mg</td>
+            <td>2,400mg</td>
+          </tr>
+          <tr>
+            <th>Total Carbohydrate</th>
+            <td></td>
+            <td>300g</td>
+            <td>375g</td>
+          </tr>
+          <tr>
+            <th class='indent'>Dietary Fiber</th>
+            <td></td>
+            <td>25g</td>
+            <td>30g</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
