@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Exercises: Arrays</title>
+  </head>
+  <body>
+    <h1>JavaScript: Array Exercises</h1>
+    <script>
+      function logz(str) { console.log("> " + str); }
+      function statement(phrase) {
+        return function(str) {
+          logz(phrase + ": " + str);
+        }
+      }
+      var guess   = statement("Guess");
+      var reason  = statement("Reason");
+      var step    = statement("Step");
+      var correct = statement("Correct answer");
+
+      logz("Exercise 1");
+      var friends = ['Bob', 'Josie', 'Sam'];
+      var enemies = ['Bob', 'Josie', 'Sam'];
+      logz("friends == enemies: " + (friends == enemies));
+      logz("friends === enemies: " + (friends === enemies));
+
+      logz("Exercise 2");
+      var friends_clone = friends;
+      logz("friends == friends_clone: " + (friends == friends_clone));
+      friends_clone.push(55);
+      logz(friends_clone);
+      logz(friends);
+
+      logz("Exercise 3");
+      logz("Enemies Length: " + enemies.length);
+      var lastInArray = function(arr) {
+        return arr[arr.length - 1];
+      }
+      logz("Last element in enemies: " + lastInArray(enemies));
+
+      logz("Exercise 4");
+      var first_names = ["Steve", "Martha", "Pat"];
+      var rollCall = function(arr) {
+        for(var i = 0; i < arr.length; i++) {
+          console.log(arr[i]);
+        }
+      }
+
+      rollCall(first_names);
+
+      logz("Exercise 5");
+      var nums = [1, 2, 3, 4, 5];
+      var reverseArray = function(arr) {
+        var new_array = [];
+        for(var i = arr.length - 1; i >= 0; i--) {
+          new_array.push(arr[i]);
+        }
+        return new_array;
+      }
+      logz(reverseArray(nums));
+
+      logz("Exercise 6");
+      var matchValue = function(value, arr) {
+        for (var i = 0; i < arr.length; i++) {
+          if (value === arr[i]) {
+            return i;
+          }
+        }
+        return -1;
+      }
+      logz("Location of 1 in nums (should be 0): " + matchValue(1, nums));
+      logz("Location of 5 in nums (should be 4): " + matchValue(5, nums));
+      logz("Location of 6 in nums (should return -1): " + matchValue(6, nums));
+
+      logz("Exercise 7");
+      var joinArray = function(arr) {
+        var str = "";
+
+        for(var i = 0; i < arr.length; i++) {
+          str += String(arr[i]);
+        }
+        return str;
+      }
+      console.log(joinArray(nums));
+    </script>
+  </body>
+</html>

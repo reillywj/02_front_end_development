@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Exercises: Variables Scopes Part II</title>
+  </head>
+
+  <body>
+    <h1>JavaScript: Variable Scope Exercises Part II</h1>
+    <script>
+      function logz(str) { console.log("> " + str); }
+      function statement(phrase) {
+        return function(str) {
+          logz(phrase + ": " + str);
+        }
+      }
+      var guess   = statement("Guess");
+      var reason  = statement("Reason");
+      var step    = statement("Step");
+      var correct = statement("Correct answer");
+
+      logz("Exercise 1");
+      guess("undefined");
+      reason("in the say function, although the code does not execute line 3, var a declaration is hoisted to the top of the local scope of the function say() and is defined as 'undefined'. console.log(a) sees this and prints undefined.");
+
+
+      logz("Exercise 2");
+      guess("hello");
+      guess("Uncaught ReferenceError: a is not defined");
+      reason("console.log(a) is trying to call the global variable a which has not been declared. hello() has a local variable a which is declared on line 6, but is hoisted out of the if statement and declared at the top of the local scope. the local variable is first defined on line 2. console.log prints this value.")
+
+      logz("Exercise 3");
+      guess("4");
+      reason("for does not have any special scope and the duplication of the declaration of a doesn't do anything. a is first defined as 'hello' but after the for loop, a is set to i and is set to 4 last before reaching 5 and breaking out of the for loop to the console.log(a). a is 4 at this point.");
+
+      logz("Exercise 4");
+      guess("4");
+      guess("3");
+      reason("the first console.log invokes foo() which returns the return value of the local function bar(), which returns the value of 4.");
+      reason("Line 13 prints a which is a global variable throughout and is not set as a local variable within foo or bar functions. a is first defined as 1, but the invocation of foo() on line 12, then sets a to 2. But when bar() is invoked within foo, a is then defined as 3.");
+
+      logz("Exercise 5");
+      step("line 1, even though a doesn't have a var, it then defaults to a global variable and is declared as one and is assigned to the value of 'global'.");
+      step("checkScope() is invoked in line 15, which has a local variable a declared on line 4. This function returns the value of nested()");
+      step("nested() has its own local variable a, and its declared/assigned on line 6 to 'nested'. nested returns the value of supernested() function");
+      step("supernested() assigns nested's local variable a to 'supernested' and returns this value.");
+      step("line 16 prints a, which is the global a, which has not been set to any value other than its first assignment on line 1: 'global'");
+      guess("supernested");
+      guess("global");
+
+      logz("Exercise 6");
+      guess("outer");
+      guess("outer");
+      guess("outer");
+      guess("inner");
+      reason("line 4 and 5 print values of globally declared variables a and b on line 1 and 2, which were assigned to the value of 'outer'");
+      reason("line 6 invokes the function setScope and passes in the value 'outer' to as an argument.");
+      reason("the local variable 'foo' is reset to 'inner' and the global variable b is assigned to 'inner'");
+      reason("the global variable a is not reassigned on line 11 and stays 'outer'");
+
+      logz("Exercise 7");
+      guess("50");
+      guess("60");
+      guess("15");
+      reason("line 8 prints out total that's declared globally and assigned on line 1.");
+      reason("incrementBy(10) increments the global variable total by 10 to 60");
+      reason("the local variable increment does not affect the value of the globally declared increment variable declared on line 2, which is assigned to 15");
+
+      logz("Exercise 8");
+      guess("outer");
+      guess("Some error because setScope is not a function yet.");;
+      reason("var a is declared and assigned to 'outer' on line 1.")
+      reason("only the declaration of setScope as a variable is hoisted and not the assignment to the function.");
+      correct("Uncaught TypeError: setScope is not a function(...)");
+
+    </script>
+  </body>
+</html>

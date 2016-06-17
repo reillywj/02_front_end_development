@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Exercises: Basic Array Uses</title>
+    <script type="text/javascript" src="basic.js"></script>
+  </head>
+  <body>
+    <h1>JavaScript: Basic Array Uses</h1>
+    <script>
+      logz("Exercise 1");
+      var letters = ['U', 'S', 'A'];
+      function firstElementOf(arr) {
+        return arr[0];
+      }
+      logz("Should return 'U': " + firstElementOf(letters));
+
+      logz("Exercise 2");
+      function lastElementOf(arr) {
+        return arr[arr.length-1];
+      }
+      logz("Should return 'A': " + lastElementOf(letters));
+
+      logz("Exercise 3");
+      function nthElementOf(arr, index) {
+        return arr[index];
+      }
+      var digits = [4, 8, 15, 16, 23, 42];
+
+      logz(nthElementOf(digits, 3)); // Returns 16
+      logz(nthElementOf(digits, 8)); // What would this return?
+      logz(nthElementOf(digits, -1));
+
+
+      logz("Exercise 4");
+      guess("No.");
+      reason("Arrays are 0-based, thus only integers 0 or greater");
+      correct("Yes you can");
+      logz("I can believe that you can. But why when you put one in you can't see it.");
+
+      logz("Exercise 5");
+      function firstNOf(arr, length) {
+        // var return_arr = [];
+        // for (var i = 0; i < length; i++) {
+        //   return_arr.push(arr[i]);
+        // }
+        // return return_arr;
+        return arr.slice(0,length);
+      }
+      var digits = [4, 8, 15, 16, 23, 42];
+      logz(firstNOf(digits, 3));
+
+      logz("Exercise 6");
+
+      function lastNOf(arr, length) {
+        if(length > arr.length) {
+          return arr;
+        }
+
+        // return arr.slice(arr.length - length);
+        return arr.slice(-length);
+      }
+      logz(lastNOf(digits, 3));
+
+      logz("Exercise 7");
+      logz("Test lastNOf with length argument greater than size of the array: " + lastNOf(digits, 7));
+
+      logz("Exercise 8");
+      function endsOf(beginning_arr, ending_arr) {
+        return [beginning_arr[0], ending_arr[ending_arr.length - 1]];
+      }
+
+      logz(endsOf([4, 8, 15], [16, 23, 42])); // Returns [4, 42]
+    </script>
+  </body>
+</html>

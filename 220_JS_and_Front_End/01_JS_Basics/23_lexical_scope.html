@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Playing Around with Lexical Scope</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>See JavaScript console in the inspector.</h1>
+
+    <script>
+      var a = 1, b = 2;
+      function hello() {
+        var b = 3, c = b;
+
+        function add_numbers(d) {
+          return a + b + d;
+        }
+
+        return a + add_numbers(c);
+      }
+
+      console.log(hello());
+
+      a = 100;
+      console.log(hello());
+      b = 50;
+      console.log(hello());
+    </script>
+  </body>
+</html>

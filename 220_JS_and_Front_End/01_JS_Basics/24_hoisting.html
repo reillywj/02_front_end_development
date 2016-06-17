@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Hoisting</title>
+  </head>
+  <body>
+    <h1>Hoisting</h1>
+    <script>
+
+      a = function() {return 55;};
+      console.log(a());
+
+      var a = function hello() {
+        return "hello";
+      };
+
+      console.log(a());
+    </script>
+  </body>
+</html>

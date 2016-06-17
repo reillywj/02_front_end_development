@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Exercises: Variables Scopes</title>
+  </head>
+
+  <body>
+    <h1>JavaScript: Variable Scope Exercises</h1>
+    <script>
+      function logz(str) { console.log("> " + str); }
+      function statement(phrase) {
+        return function(str) {
+          logz(phrase + ": " + str);
+        }
+      }
+      // function guess(str) { logz("Guess: " + str); }
+      // function reason(str) { logz("Reason: " + str); }
+      var guess   = statement("Guess");
+      var reason  = statement("Reason");
+      var step    = statement("Step");
+      var correct = statement("Correct answer");
+
+
+      logz("Exercise 1");
+      guess("first console prints 'outer'");
+      guess("testScope() prints 'inner'");
+      guess("last console.log prints 'outer'");
+
+      logz("Exercise 2");
+      guess("outer");
+      guess("inner");
+      guess("inner");
+
+      logz("Exercise 3");
+      step("empty - from the first console.log(basket) and basket has not been set to 'tv' or 'computer' by hoisting");
+      step("shop1 sets basket to tv when shop1() is invoked");
+      step("shop2 is invoked and sets global basket to computer");
+      step("shop3 is invoked and has a local basket variable set to play station")
+      step("shop3's console.log prints 'play station'");
+      step("the final console.log in goShopping prints the global basket variable which was set to 'computer'");
+
+      guess("So...");
+      guess("empty");
+      guess("play station");
+      guess("computer");
+
+      logz("Exercise 4");
+      guess("undefined");
+      reason("the variable a declaration is hoisted, but the assignment is not. When console.log(a) is invoked, variable a has been declared but has not been assigned a value, which by default is undefined upon declaration");
+
+      logz("Exercise 5");
+      guess("undefined");
+      reason("The declared function and its body is hoisted. console.log(a) sees the globally declared variable (default if var not provided in the function). But the function hello is not invoked to assign the variable a to anything. Thus a is declared but has default value undefined when the console.log(a) runs.")
+      correct("'Uncaught ReferenceError: a is not defined'");
+      reason("the function hello is hoisted, but is not invoked, which does not declare the variable a.");
+
+      logz("Exercise 6");
+      guess("hello");
+      reason("hello() is invoked on line 5, which declares the global variable (default when var is not given within a function) and assigns it to 'hello'.");
+
+      // function helloz() {
+      //   a = "hello";
+      // }
+      // console.log(a);
+      // helloz();
+      // console.log(a);
+
+      logz("Exercise 7");
+      guess("Uncaught ReferenceError: a is not defined");
+      reason("variable a is declared as a local variable within the function hello() and console.log(a) is not within that scope to see the local variable of a.")
+    </script>
+  </body>
+</html>
