@@ -1,0 +1,75 @@
+<!doctype html>
+
+<!-- page 142 -->
+<html lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Bubble Factory Test</title>
+    <script>
+      function outputScores(scores) {
+        for(var i = 0; i < scores.length; i++) {
+          var output = "Bubble solution #" + i + " score: " + scores[i];
+          console.log(output);
+        }
+        console.log("Bubbles tests: " + i);
+      }
+
+      function maxScore(scores) {
+        var maxScore = 0;
+        for(var i = 0; i < scores.length; i++) {
+          if(scores[i] > maxScore) {
+            maxScore = scores[i];
+          }
+        }
+        console.log("Highest bubble score: " + maxScore);
+        return maxScore;
+      }
+
+      function maxScoresIndex(scores) {
+        var hiScore = maxScore(scores);
+        var maxScores = [];
+        for(var i = 0; i < scores.length; i++) {
+          if(scores[i] === hiScore ) {
+            maxScores.push(i);
+          }
+        }
+        console.log("Solutions with highest score: " + maxScores.join(", "));
+        return maxScores;
+      }
+
+      function lowestValue(someIndexArray, someArray) {
+        var lowest, currentValue;
+        for(var i = 0; i < someIndexArray.length; i++) {
+          currentValue = someArray[someIndexArray[i]];
+          if(lowest == undefined) {
+            lowest = currentValue;
+          } else if( currentValue < lowest) {
+            lowest = currentValue;
+          }
+        }
+        return lowest;
+      }
+
+      var scores = [60, 50, 60, 58, 54, 54,
+                    58, 50, 52, 54, 48, 69,
+                    34, 55, 51, 52, 44, 51,
+                    69, 64, 66, 55, 52, 61,
+                    46, 31, 57, 52, 44, 18,
+                    41, 53, 55, 61, 51, 44];
+
+      var costs = [.25,.27,.25,.25,.25,.25,
+                    .33,.31,.25,.29,.27,.22,
+                    .31,.25,.25,.33,.21,.25,
+                    .25,.25,.28,.25,.24,.22,
+                    .20,.25,.30,.25,.24,.25,
+                    .25,.25,.27,.25,.26,.29];
+
+      outputScores(scores);
+      var maxIndex = maxScoresIndex(scores);
+      console.log("Lowest Value: " + lowestValue(maxIndex, costs));
+    </script>
+  </head>
+  <body></body>
+</html>
+
+
