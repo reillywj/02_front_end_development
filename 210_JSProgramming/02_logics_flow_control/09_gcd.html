@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Greatest Common Divisor</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Greatest Common Divisor</h1>
+
+    <script>
+      // function gcd(a, b) {
+      //   var bigger = Math.max(a, b),
+      //       smaller = Math.min(a, b),
+      //       divisors_bigger = divisors(bigger),
+      //       divisors_smaller = divisors(smaller);
+        
+      //   var greatest = 1,
+      //       value;
+
+      //   for (var i = 0, len = divisors_smaller.length; i < len; i++) {
+      //     value = divisors_smaller[i];
+      //     if (value > greatest && divisors_bigger.includes(value)) {
+      //       greatest = value;
+      //     }
+      //   }
+      //   console.log("GCD of "+ a +" and " + b + ": " + greatest);
+      //   return greatest;
+      // }
+
+      // function divisors(num) {
+      //   var arr = [];
+      //   for (var i = 1; i <= Math.floor(Math.sqrt(num)); i ++) {
+      //     if (num % i === 0) {
+      //       arr.push(i, num / i);
+      //     }
+      //   }
+      //   return arr;
+      // }
+      function gcd(a, b) {
+        var greatest = 1;
+        for(var i = 2; i <= a && i <= b; i++) {
+          if(a % i === 0 && b % i === 0) {
+            greatest = i;
+          }
+        }
+        console.log(greatest);
+        return greatest;
+      }
+      gcd(12, 4);
+      gcd(15, 10);
+      gcd(9, 2);
+      
+    </script>
+  </body>
+</html>
