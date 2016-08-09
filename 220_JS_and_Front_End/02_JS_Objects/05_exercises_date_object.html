@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>LS: The Date Object</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>JavaScript: The Date Object</h1>
+    <script>
+      var today         = new Date();      
+      
+      function dateSuffix(num) {
+        var firsts  = [1, 21, 31];
+        var seconds = [2, 22];
+        var thirds  = [3, 23];
+        var script  = "";
+
+        if(firsts.includes(num)) {
+          script = "st";
+        } else if(seconds.includes(num)) {
+          script = "nd";
+        } else if(thirds.includes(num)) {
+          script = "rd";
+        } else { script = "th";}
+        return num + script;
+      };
+
+      function formattedMonth(date) {
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        return months[date.getMonth()];
+      }
+      
+      function formattedDay(date) {
+        var days_of_week  = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+        return days_of_week[date.getDay()];
+      }
+
+      // formattedYear function not needed since Date object has a #getFullYear method.
+      // function formattedYear(date) {
+      //   return 1900 + date.getYear();
+      // }
+
+      function formattedTime(date) {
+        function padNumber(num) { return "0" + num;}
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+
+        if (hours   < 10) { hours   = padNumber(hours); }
+        if (minutes < 10) { minutes = padNumber(minutes); }
+        return hours + ":" + minutes;
+      }
+
+      function formattedDate(date) {
+        return "Today's day is " + formattedDay(date) + ", " + formattedMonth(date) + " " + dateSuffix(date.getDate()) + ", " + date.getFullYear() + ", " + formattedTime(date) + "."
+      }
+
+      var tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      console.log(formattedDate(today));
+      console.log(today.getTime());
+      console.log(tomorrow instanceof Date);
+      console.log(tomorrow);
+      console.log(formattedDate(tomorrow));
+
+      var next_week = new Date(today);
+      console.log(next_week === today);
+      console.log(next_week.toDateString() == today.toDateString());
+      
+      next_week.setDate(next_week.getDate() + 7)
+      console.log(next_week);
+      console.log(next_week.toDateString() == today.toDateString());
+      console.log(today);
+
+      var test_date = new Date(2016, 6, 1, 5, 9);
+      console.log(formattedDate(test_date));
+    </script>
+  </body>
+</html>

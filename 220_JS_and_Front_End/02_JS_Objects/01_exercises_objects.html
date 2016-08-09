@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Exercises: Objects</title>
+  </head>
+  <body>
+    <h1>JavaScript: Objects</h1>
+    <script>
+      
+
+      // Invoices object
+      var invoices = {
+        unpaid: [],
+        paid: [],
+        add: function(clientName, amountDue) {
+          var newInvoice, compareInvoices;
+
+          newInvoice = {
+            name:   clientName,
+            amount: amountDue,
+            print: function(i) {
+              console.log(i + ") Name: " + this.name + "; Amount: " + this.amount);
+            }
+          };
+
+          this.unpaid.push(newInvoice);
+          compareInvoices = function(a, b) {
+            return b.amount - a.amount;
+          };
+          this.unpaid.sort(compareInvoices);
+        },
+        totalFunction: function(arr) {
+          var totalFunction = function() {
+            var total = 0;
+            for(var i = 0; i < arr.length; i++) {
+              total += arr[i].amount;
+            }
+          return total;
+          };
+
+          return totalFunction;
+        },
+        payInvoice: function(clientName){
+          for(var i = 0; i < this.unpaid.length; i++) {
+            var client = this.unpaid[i];
+            if (client.name == clientName) {
+              this.paid.push(client);
+              this.unpaid.splice(i, 1);
+            }
+          }
+        },
+        print: function() {
+          // Unpaid Invoices
+          console.log("Unpaid Invoices");
+          for(var i = 0; i < this.unpaid.length; i++) {
+            this.unpaid[i].print(i + 1);
+          }
+          console.log("Total Due: " + this.totalDue());
+
+          // Paid Invoices
+          if(this.paid) {
+            console.log("Paid Invoices");
+            for(var i = 0; i < this.paid.length; i++) {
+              this.paid[i].print(i+1);
+            }
+            console.log("Total Paid: " + this.totalPaid());
+          }
+          
+        }
+      };
+
+      invoices.totalDue = invoices.totalFunction(invoices.unpaid);
+      invoices.totalPaid = invoices.totalFunction(invoices.paid);
+
+      var unpaidClients = [
+          ["Due North Development", 250],
+          ["Moonbeam Interactive", 187.50],
+          ["Slough Digital", 300]];
+      for(var i = 0; i < unpaidClients.length; i++) {
+        var client = unpaidClients[i];
+        invoices.add(client[0], client[1]);
+      }
+
+      invoices.print();
+
+      invoices.payInvoice("Slough Digital");
+      invoices.print();
+
+      invoices.payInvoice("Due North Development");
+      invoices.print();
+    </script>
+  </body>
+</html>

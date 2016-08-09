@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Primitive Types and Type Coercion</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Exercises: Primitive Types and Type Coercion</h1>
+    <script>
+      var x = "13",
+          y = 9;
+      // Fix This:
+      console.log(x + y); // logs "139"
+      console.log(+x + y); // logs 22
+      // or
+      console.log(Number(x) + y); // logs 22
+
+      console.log(x * y);
+      console.log("Turns out the multiplication operator tries to convert all strings to a number first before trying to calculate.")
+
+      var npa = 212,
+          nxx = 555,
+          num = 1212;
+
+      console.log(npa + nxx + num); // Fix this so that it's concatenation
+      console.log("" + npa + nxx + num);
+      console.log(String(npa) + String(nxx) + String(num));
+
+      console.log(bool); // An example of hoisting bool declaration to top, but not assigning it yet.
+
+      var bool = true,
+          arr = [1, 2, 3];
+
+      console.log(bool.toString());
+      console.log(arr.toString());
+    </script>
+  </body>
+</html>

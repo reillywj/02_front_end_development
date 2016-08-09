@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Variables and Numbers</title>
+  </head>
+  <body>
+    <h1>Exercises: Variables and Numbers</h1>
+    <script>
+      var numerator = 10,
+          denominator = 2,
+          answer = numerator / denominator,
+          incrementer = 1,
+          start = incrementer,
+          end,
+          difference;
+
+      function logz(msg, answer) {
+        console.log(msg + ": " + answer);
+      }
+
+      logz('numerator', numerator);
+      logz('denominator', denominator);
+      logz('answer', answer);
+      logz('incrementer', incrementer);
+      logz('start', start);
+      logz('end', end);
+      logz('difference', difference);
+
+      for(var i = 0; i < 3; i++) {
+        incrementer += 1;
+      }
+      logz('incrementer', incrementer);
+
+      for(var i = 0; i < 2; i++) {
+        incrementer++;
+      }
+      logz('incrementer', incrementer);
+
+      end = incrementer;
+      difference = end - start;
+      logz('end', end);
+      logz('difference', difference);
+
+      answer = (11 + 31) * 3;
+      logz('(11 + 31) * 3', answer);
+    </script>
+  </body>
+</html>

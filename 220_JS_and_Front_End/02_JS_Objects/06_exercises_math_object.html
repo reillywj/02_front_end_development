@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>LS: The Math Object</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>JavaScript: The Math Object</h1>
+    <script>
+      function toDegrees(radians) { return radians * 180 / Math.PI; }
+
+      console.log(toDegrees(Math.PI));
+
+      console.log("abs value of -180: " + Math.abs(-180));
+
+      console.log("sqrt of 16777216: " + Math.sqrt(16777216));
+
+      console.log("16^6: " + Math.pow(16, 6));
+
+      console.log("Integer value of 50:")
+      var a = 50.72,
+          b = 49.2,
+          c = 49.86;
+
+      console.log(Math.floor(a));
+      console.log(Math.ceil(b));
+      console.log(Math.round(c));
+
+      function randomBetween(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      for(var i = 0; i < 10; i++) {
+        console.log("min: 5, max: 10: " + randomBetween(5, 10));
+      }
+
+      var greetings = {
+        morning: "Good morning, ",
+        afternoon: "Good afternoon, ",
+        evening: "Good evening, ",
+
+        greeting: function(name) {
+          var current_hour = (new Date()).getHours();
+
+          if(current_hour < 12){
+            console.log(this.morning + name);
+          } else if(current_hour < 18){
+            console.log(this.afternoon + name);
+          } else{
+            console.log(this.evening + name);
+          }
+        },
+      };
+
+      spanish_words = {
+        morning: "Buenos días, ",
+        afternoon: "Buenas tardes, ",
+        evening: "Buena noches, ",
+      }
+
+      var spanishGreeter = greetings.greeting.bind(spanish_words);
+
+      spanishGreeter('Jose');
+      spanishGreeter('Juan');
+    </script>
+  </body>
+</html>

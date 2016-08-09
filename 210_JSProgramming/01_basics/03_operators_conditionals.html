@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Operators and Conditionals</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Exercises: Operators and Conditionals</h1>
+    <script>
+      var apples = 3,
+          bananas = 5;
+
+      function equality(a, b) {
+        if (a === b) {
+          console.log("They are strictly equal!");
+        } else {
+          if(a == b) {
+            console.log("They are the equal but not the same type.");
+          } else {
+            console.log("They are not equal :(");
+          }
+        }
+      }
+
+      function eitherOr(a, b) {
+        var eitherOr = a || b;
+        if(eitherOr) {
+          console.log(eitherOr);
+        }
+      }
+
+      equality(apples, bananas);
+      bananas = "3";
+      equality(apples, bananas);
+      bananas = 3;
+      equality(apples, bananas);
+
+      apples = 3;
+      bananas = undefined;
+      // eitherOr = apples || bananas;
+
+      eitherOr(apples, bananas);
+
+      bananas = 1;
+      eitherOr(apples, bananas); // expect 3
+      eitherOr(bananas, apples); // expect 1
+
+      var lastName = "Riley";
+      var familyMessage = lastName === "Riley" ? "You're part of the family!" : "You're not part of the family :(";
+      console.log(familyMessage);
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Head First: Car Production</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>JavaScript: Car Constructor</h1>
+    <script>
+      function Car(params) {
+        this.make         = params.make;
+        this.model        = params.model;
+        this.year         = params.year;
+        this.color        = params.color;
+        this.passengers   = params.passengers;
+        this.convertible  = params.convertible;
+        this.mileage      = params.mileage;
+        this.started      = false;
+        this.start = function() {
+          this.started = true;
+        };
+        this.stop = function() {
+          this.started = false;
+        };
+        this.drive = function() {
+          if(this.started) {
+            console.log(this.make + " " + this.model + " goes zoom zoom!");
+          } else {
+            console.log("Start the engine first.");
+          }
+        };
+      }
+      chevyParams = { make: 'Chevy',
+                      model: 'Bel Air',
+                      year: 1957,
+                      color: 'red',
+                      convertible: false,
+                      mileage: 1021 };
+      cadiParams = { make: 'GM',
+                      model: 'Cadillac',
+                      year: 1955,
+                      color: 'tan',
+                      convertible: false,
+                      mileage: 12892 };
+      fiatParams = { make: 'Fiat',
+                      model: '500',
+                      year: 1957,
+                      color: 'Medium Blue',
+                      convertible: false,
+                      mileage: 88000 };
+      taxiParams = { make: 'Webville Motors',
+                      model: 'Taxi',
+                      year: 1955,
+                      color: 'yellow',
+                      convertible: false,
+                      mileage: 281341 };
+      testParams = { make: 'Webville Motors',
+                      model: 'Test Car',
+                      year: 2014,
+                      color: 'marine',
+                      convertible: true,
+                      mileage: 21 };
+
+      var chevy = new Car(chevyParams);
+      var cadi = new Car(cadiParams);
+      var fiat = new Car(fiatParams);
+      var taxi = new Car(taxiParams);
+      var testCar = new Car(testParams);
+      var cars = [chevy, cadi, fiat, taxi, testCar];
+      for(var i = 0; i < cars.length; i++) {
+        cars[i].start();
+        cars[i].drive();
+        cars[i].drive();
+        cars[i].stop();
+        cars[i].drive();
+      }
+    </script>
+  </body>
+</html>

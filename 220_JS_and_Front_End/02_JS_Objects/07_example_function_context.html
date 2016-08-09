@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>LS: Example: Function Context</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>JavaScript: Changing Function's Context</h1>
+    <script>
+      var temperatures = [53, 86, 12, 43];
+
+      function average() {
+        var total = 0;
+
+        for (var i = this.length - 1; i >= 0; i--) {
+          total += this[i];
+        }
+
+        return total / this.length;
+      }
+
+      console.log(average(temperatures));
+
+      var averageTemperatures = average.bind(temperatures);
+
+      console.log(averageTemperatures());
+    </script>
+  </body>
+</html>

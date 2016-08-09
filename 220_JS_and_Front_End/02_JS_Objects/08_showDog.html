@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>JS Prototypes and Inheritance</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Prototypes and Inheritance</h1>
+    <script>
+      function log(obj, message) {
+        console.log(obj.name + message);
+      }
+
+      function Dog(name, breed, weight) {
+        this.name = name;
+        this.breed = breed;
+        this.weight = weight;
+      }
+
+      Dog.prototype.bark = function() { log(this, " says, Woof Woof!"); }
+      Dog.prototype.run = function() { log(this, " is running."); }
+
+      function ShowDog(name, breed, weight, handler) {
+        // this.name = name;
+        // this.breed = breed;
+        // this.weight = weight;
+        Dog.call(this, name, breed, weight);
+        this.handler = handler;
+      }
+
+      ShowDog.prototype = new Dog();
+      ShowDog.prototype.league = "Webville"
+      ShowDog.prototype.stack = function() { console.log("Stack"); };
+      ShowDog.prototype.bait = function() { console.log("Bait"); };
+      ShowDog.prototype.gait = function(kind) { console.log(kind + "ing"); };
+      ShowDog.prototype.groom = function() { console.log("Groom"); };
+
+      fido = new Dog("Fido", "Mixed", 38);
+      fido.bark();
+      fido.run();
+
+      betsy = new ShowDog("Betsy", "Cocker Spaniel", 38, "Jackie");
+      betsy.bark();
+      betsy.run();
+      betsy.gait("strutt");
+      betsy.groom();
+      betsy.stack();
+    </script>
+  </body>
+</html>

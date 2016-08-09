@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Variables Scopes in JavaScript(1)</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Exercises: Variable Scopes in JavaScript(1)</h1>
+    <ol>
+      <li>outer; inner; outer
+        <ul>
+          <li>The console.log(a) sees the global scoped a assigned to "outer"</li>
+          <li>testScope()'s scope sees the locally declared a which is assigned to "inner"; this function logs this value of a</li>
+        </ul>
+      </li>
+      <li>outer; inner; inner
+        <ul>
+          <li>The variable a is the global variable both when it is assigned to "outer" in line 1 as well as line 4 within the function testScope</li>
+          <li>Thus, the first console.log(a) yields "outer"</li>
+          <li>testScope() is invoked, which reassigns the global variable to "inner" and then logs that value</li>
+          <li>Since 'a' was reassigned from the function invocation, line 10 logs "inner" to the console</li>
+        </ul>
+      </li>
+      <li>basket; play station; computer
+        <ul>
+          <li>the global variable basket is first assigned to "empty"</li>
+          <li>line 26 invokes the goShopping function</li>
+          <li>the three local functions are hoisted to the top of this function</li>
+          <li>console.log(basket); yields the global basket variable which is assigned to "empty"</li>
+          <li>shop1 function is invoked setting global variable basket to "tv"</li>
+          <li>shop2 function is invoked setting global variable basket to "computer"</li>
+          <li>shop3 function is invoked, it shadows the variable basket, creating its own local variable basket and assigns this variable to "play station" and then logs this value</li>
+          <li>goShopping ends with a log to the global variable basket which was last assigned to "computer"</li>
+        </ul>
+      </li>
+      <li>undefined
+        <ul>
+          <li>variable declaration of a is hoisted above console.log(a), however variable assignment occurs after console.log(a)</li>
+          <li>Thus, a is undefined when console.log(a) is called</li>
+        </ul>
+      </li>
+      <li>Uncaught ReferenceError: a is not defined
+        <ul><li>hello is hoisted to the top but is never invoked to declare or assign the global variable a.</li></ul>
+      </li>
+      <li>hello
+        <ul>hello() is invoked in this case, declaring 'a' and assigning "hello" to it before line 6</ul>
+      </li>
+      <li>Uncaught ReferenceError: a is not defined
+        <ul><li>the variable in hello() is now a local variable to this function and does not declare the global variable nor sets it to any value</li></ul>
+      </li>
+    </ol>
+  </body>
+</html>

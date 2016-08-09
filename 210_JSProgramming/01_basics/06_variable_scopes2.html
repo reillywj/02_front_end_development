@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Variable Scopes in JavaScript(2)</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Exercises: Variable Scopes in JavaScript(2)</h1>
+    <ol>
+      <li>
+        undefined
+        <ul>
+          <li>the if statement does not get executed, however variable declaration of a within the scope of say() does occur and by default, set to undefined and then console.log(a) logs undefined.</li>
+        </ul>
+      </li>
+      <li>
+        hello; Uncaught ReferenceError: a is not defined
+        <ul>
+          <li>hello() is invoked</li>
+          <li>variable a is declared after hoisting var a to top of function</li>
+          <li>a, local to hello(), is assigned to "hello" and then logged.</li>
+          <li>the if statement is ignored; and doesn't matter</li>
+          <li>line 11 tries to log the global variable a which is not defined yet, even as a variable</li>
+        </ul>
+      </li>
+      <li>
+        4
+        <ul>
+          <li>Although the variable 'a' is declared twice, it doesn't affect the scope of the variable within the for loop.</li>
+          <li>Thus, a is first assigned to "hello" before the loop and is then assigned to the number 0, 1, 2, 3, 4 until the loop reaches it's limit.</li>
+          <li>a is the Number 4 by line 7</li>
+        </ul>
+      </li>
+      <li>
+        4; 3
+        <ul>
+          <li>a is first declared a global variable and assigned to the number 1</li>
+          <li>line 12 will log the return value of foo(), which in its code, reassigns the global variable a to 2 before running the bar() function which then sets a to 3 before returning the value 4, which is the return value of foo()</li>
+          <li>a is logged on 13, which was last set to 3</li>
+        </ul>
+      </li>
+      <li>
+        supernested; global
+        <ul>
+          <li>line 1 establishes the global variable a (by default) and assigns it to "global"</li>
+          <li>line 15 logs the return value of checkScope()</li>
+          <li>checkScope() establishes a local variable a, which is assigned to "local"</li>
+          <li>checkScope() invokes its nested() function as its return value, which establishes its own local variable a (assigned to "nested", reassigned to "supernested" after function invocation on line 11, but all that does is establish the return value of supernested, which is the return value for nested, which is the return value for checkScope.</li>
+          <li>Since the global variable is never touched within the nests of functions, due to local variable declarations, a is never reassigned. Thus, line 16 logs "global"</li>
+        </ul>
+      </li>
+      <li>
+        outer; outer; outer; inner
+        <ul>
+          <li>line 4 and 5 logs the value of the global variables a and b: "outer"</li>
+          <li>line 6 calls the setScope() function with the value of a as a parameter, whose value is assigned to the local variable foo of the function upon invocation, but foo is reassigned to "inner" on line 11</li>
+          <li>b, the global variable, however is reassigned to "inner" on line 12</li>
+          <li>Thus, line 7 logs "outer" and line 8 logs "inner"</li>
+          <li>Note: due to hoisting function setScope is hoisted to the top.</li>
+        </ul>
+      </li>
+      <li>
+        50; 60; 15
+        <ul>
+          <li>line 8 logs total, declared and assigned on line 1 to 50</li>
+          <li>line 9 increments the global variable by the parameter 10 to 60</li>
+          <li>increment is a local variable to incrementBy(), thus increment on line 11 is the same as the global variable declared and assigned on line 2, or 15</li>
+        </ul>
+      </li>
+      <li>
+        outer; Uncaught TypeError
+        <ul>
+          <li>line 3 logs a, which is declared and assigned on line 1 to "outer"</li>
+          <li>line 4 tries to call the function setScope(), but setScope at this point is only a declared variable due to hoisting and not a reference to the function which is assigned to afterwards on line 7.</li>
+        </ul>
+      </li>
+    </ol>
+  </body>
+</html>
