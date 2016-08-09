@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Prime Check</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Prime Check</h1>
+    <script>
+      function isPrime(num) {
+        var isPrime = true;
+
+        if (num < 2) {
+          isPrime = false;
+        } else if (num === 2) {
+          isPrime = true;
+        } else {
+          for (var i = 2; i <= Math.floor(Math.sqrt(num));) {
+            console.log("Checking: " + String(i));
+            if ( num % i === 0) {
+              isPrime = false;
+              break;
+            }
+            if (i > 2) { i += 2; } else { i++; }
+          }
+        }
+
+        console.log(isPrime);
+        return isPrime;
+      }
+
+      isPrime(1);
+      isPrime(2);
+      isPrime(3);
+      isPrime(43);
+      isPrime(55);
+      isPrime(0);
+    </script>
+  </body>
+</html>

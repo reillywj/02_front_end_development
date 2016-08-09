@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>XOR</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>XOR</h1>
+    <script>
+      function isXor(a, b) {
+        answer = Boolean(a) != Boolean(b);
+        console.log("isXor("+String(a)+", " + String(b)+") = " + answer);
+        return answer;
+      }
+
+
+      isXor(false, true);     // true
+      isXor(true, false);     // true
+      isXor(false, false);    // false
+      isXor(true, true);      // false
+
+
+      isXor(false, 3);        // true
+      isXor("a", undefined);  // true
+      isXor(null, "");        // false
+      isXor("2", 23);         // false
+    </script>
+  </body>
+</html>

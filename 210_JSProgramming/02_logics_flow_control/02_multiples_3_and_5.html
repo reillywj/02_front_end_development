@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Multiples of 3 and 5</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Multiples of 3 and 5</h1>
+    <script>
+      function multipliesOfThreeAndFive() {
+        var divBy3 = false, divBy5 = false;
+
+        for (var i = 3; i <= 100; i += 1) {
+          divBy3 = (i % 3 === 0);
+          divBy5 = (i % 5 === 0);
+
+          if (divBy3 && divBy5) {
+            console.log(i + "!");
+          } else if (divBy3 || divBy5) {
+            console.log(i);
+          }
+        }
+      }
+
+      multipliesOfThreeAndFive();
+    </script>
+  </body>
+</html>

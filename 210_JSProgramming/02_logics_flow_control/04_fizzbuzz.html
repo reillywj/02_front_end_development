@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>FizzBuzz</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>FizzBuzz</h1>
+    <script>
+      var fizz = "Fizz", buzz = "Buzz";
+      function fizzbuzz() {
+        var divBy3, divBy5, message;
+
+        for (var i = 1; i <= 100; i++) {
+          divBy3 = i % 3 === 0;
+          divBy5 = i % 5 === 0;
+          message = i;
+
+          if (divBy3 && divBy5) {
+            // console.log(fizz + buzz);
+            message = fizz + buzz;
+          } else if(divBy3) {
+            // console.log(fizz);
+            message = fizz;
+          } else if (divBy5) {
+            // console.log(buzz);
+            message = buzz;
+          }
+          // } else { console.log(i); }
+          console.log(message);
+        }
+      }
+
+      fizzbuzz();
+    </script>
+  </body>
+</html>
