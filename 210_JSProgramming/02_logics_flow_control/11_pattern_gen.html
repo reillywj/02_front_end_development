@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Pattern Generation</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Pattern Generation</h1>
+    <script>
+      function countUpTo(n) {
+        var segment = "";
+        for (var j = 1; j <= n; j++) {
+          segment += j;
+        }
+        return segment;
+      }
+
+      function asterisk(n) {
+        var segment = "";
+        for (var j = 1; j <= n; j++) {
+          segment += "*";
+        }
+        return segment;
+      }
+      function generatePattern(n) {
+        var line, lines = "";
+        for (var i = 1; i <= n; i++ ) {
+          line = countUpTo(i) + asterisk(n - i);
+          lines += line;
+          if ( i !== n ) { lines += "\n" };
+          // console.log(line);
+        }
+        console.log(lines);
+      }
+      generatePattern(2);
+      generatePattern(7);
+      generatePattern(9);
+    </script>
+  </body>
+</html>
