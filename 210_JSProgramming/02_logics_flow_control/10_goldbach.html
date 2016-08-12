@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Goldbach Numbers</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Goldbach Numbers</h1>
+    <script>
+      function isPrime(num) {
+        if (num <= 1) {
+          return false;
+        } else if (num === 2) {
+          return true;
+        } else {
+          if (num % 2 === 0) { return false; }
+
+          for (var i = 3, stopper = Math.floor(Math.sqrt(num)); i <= stopper; i += 2) {
+            if (num % i === 0) {
+              return false;
+            }
+          }
+          return true;
+        }
+      }
+
+      function primesUpTo(n) {
+        var arr = [];
+        for (var i = 1; i <= n; i++) {
+          if (isPrime(i)) {
+            arr.push(i);
+          }
+        }
+        return arr;
+      }
+
+      function logArr(arr) {
+        for (var i = 0, len = arr.length; i < len; i++) {
+          console.log(String(arr[i][0]) + " " + String(arr[i][1]));
+        }
+      }
+
+      function checkGoldbach(n) {
+        var primes, prime_a, prime_b, combos = [];
+        if (n < 4) { console.log(null); return null; }
+
+        primes = primesUpTo(n);
+
+        for (var i = 0, stopper = Math.ceil(n / 2); primes[i] <= stopper; i++) {
+
+          for (var j = primes.length - 1; primes[j] >= stopper; j--) {
+            prime_a = primes[i];
+            prime_b = primes[j];
+            if (prime_a + prime_b === n) {
+              combos.push([prime_a, prime_b]);
+              continue;
+            }
+          }
+        }
+
+        logArr(combos);
+        return combos;
+      }
+
+      var checks = [3, 4, 12, 100];
+      for(var i = 0, len = checks.length; i < len; i++) {
+        console.log("Goldbach of " + checks[i]);
+        checkGoldbach(checks[i]);
+      }
+    </script>
+  </body>
+</html>
