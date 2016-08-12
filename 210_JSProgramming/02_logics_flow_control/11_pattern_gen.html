@@ -9,23 +9,31 @@
     <script>
       function countUpTo(n) {
         var segment = "";
-        for (var j = 1; j <= n; j++) {
+        for ( var j = 1; j <= n; j++) {
           segment += j;
         }
         return segment;
       }
 
-      function asterisk(n) {
-        var segment = "";
-        for (var j = 1; j <= n; j++) {
-          segment += "*";
+      function symbolize(symbol, index) {
+        for (var i = 1, stopper = Math.log10(index); i <= stopper; i ++) {
+          symbol += "x";
+        } 
+        return symbol;
+      }
+
+      function asterisk(n, i) {
+        var segment = "", symbol = "*";
+        for ( var j = 1; j <= n - i; j++) {
+          segment += symbolize(symbol, j + i);
         }
         return segment;
       }
+
       function generatePattern(n) {
         var line, lines = "";
-        for (var i = 1; i <= n; i++ ) {
-          line = countUpTo(i) + asterisk(n - i);
+        for ( var i = 1; i <= n; i++ ) {
+          line = countUpTo(i) + asterisk(n, i);
           lines += line;
           if ( i !== n ) { lines += "\n" };
         }
@@ -34,6 +42,8 @@
       generatePattern(2);
       generatePattern(7);
       generatePattern(9);
+      generatePattern(20);
+      generatePattern(100);
     </script>
   </body>
 </html>
