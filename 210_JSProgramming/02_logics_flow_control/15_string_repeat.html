@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>String Repeat</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>String Repeat</h1>
+    <script>
+      function repeat(str, times) {
+        var result;
+        if (0 <= times) {
+          result = "";
+          for ( var i = 0; i < times; i++) {
+            result += str;
+          }
+        }
+        console.log(result);
+        return result;
+      }
+
+      repeat('abc', 1);    // "abc"
+      repeat('abc', 2);    // "abcabc"
+      repeat('abc', -1);   // undefined
+      repeat('abc', 0);    // ""
+      repeat('abc', 'a');  // undefined
+    </script>
+  </body>
+</html>
