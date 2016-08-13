@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Index of Substring</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Index of Substring</h1>
+    <script>
+      function indexOf(str, substr, start = -1) {
+        var moveOn;
+        for (var i = start + 1, stopper = str.length - substr.length + 1; i < stopper; i++) {
+          if (str[i] === substr[0]) {
+            moveOn = false;
+            for (var j = 0, len = substr.length; j < len; j++) {
+              if( str[i + j] !== substr[j] ) {
+                moveOn = true;
+                continue;
+              }
+            }
+            if (moveOn) { 
+              continue;
+            } else {
+              return i;
+            }
+          } else { continue; }
+        }
+        return -1;
+      }
+
+      function lastIndexOf(str, substr) {
+        var index = -1, proceed = true, current;
+        while( proceed ) {
+          current = indexOf(str, substr, index);
+          if (current >= 0) {
+            index = current;
+          } else {
+            proceed = false;
+          }
+        }
+        return index;
+      }
+
+      function logz(value) {
+        console.log(value);
+      }
+
+      logz(indexOf('Some strings', 's'));      // 5
+      logz(indexOf('Blue Whale', 'Whale'));    // 5
+      logz(indexOf('Blue Whale', 'Blute'));    // -1
+      logz(indexOf('Blue Whale', 'leB'));      // -1
+
+      logz(lastIndexOf('Some strings', 's'));                  // 11
+      logz(lastIndexOf('Blue Whale, Killer Whale', 'Whale'));  // 19
+      logz(lastIndexOf('Blue Whale, Killer Whale', 'all'));    // -1
+    </script>
+  </body>
+</html>

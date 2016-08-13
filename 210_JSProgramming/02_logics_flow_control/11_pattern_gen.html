@@ -16,10 +16,11 @@
       }
 
       function symbolize(symbol, index) {
+        var segment = symbol;
         for (var i = 1, stopper = Math.log10(index); i <= stopper; i ++) {
-          symbol += "x";
+          segment += symbol;
         } 
-        return symbol;
+        return segment;
       }
 
       function asterisk(n, i) {
