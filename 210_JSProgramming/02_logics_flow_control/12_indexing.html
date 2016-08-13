@@ -8,19 +8,17 @@
     <h1>Index of Substring</h1>
     <script>
       function indexOf(str, substr, start = -1) {
-        var moveOn;
+        var found;
         for (var i = start + 1, stopper = str.length - substr.length + 1; i < stopper; i++) {
           if (str[i] === substr[0]) {
-            moveOn = false;
+            found = true;
             for (var j = 0, len = substr.length; j < len; j++) {
               if( str[i + j] !== substr[j] ) {
-                moveOn = true;
-                continue;
+                found = false;
+                break;
               }
             }
-            if (moveOn) { 
-              continue;
-            } else {
+            if (found) {
               return i;
             }
           } else { continue; }

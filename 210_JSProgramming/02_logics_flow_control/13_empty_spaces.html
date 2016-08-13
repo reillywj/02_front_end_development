@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Trimming Empty Spaces</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Trimming Empty Spaces</h1>
+    <script>
+      function trim(str) {
+        var start_index = 0, ending_index = str.length - 1, trimmed = "";
+        while(str[start_index] === " " || start_index === ending_index) {
+          start_index++;
+        }
+
+        while(str[ending_index] === " " || start_index === ending_index ) {
+          ending_index--;
+        }
+
+        for ( var i = start_index; i <= ending_index; i++) {
+          trimmed += str[i];
+        }
+        console.log(trimmed);
+        return trimmed;
+      }
+
+      trim('  abc  ');  // "abc"
+      trim('abc   ');   // "abc"
+      trim(' ab c');    // "ab c"
+      trim(' a b  c');  // "a b  c"
+      trim('      ');   // ""
+      trim('');         // ""
+    </script>
+  </body>
+</html>
