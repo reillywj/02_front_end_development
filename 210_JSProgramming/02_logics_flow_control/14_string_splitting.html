@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Splitting a String</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Splitting a String</h1>
+    <script>
+      function splitString(str, delimiter) {
+        var current_string = "", len = str.length;
+        if (delimiter === "") {
+          for (var i = 0; i < len; i++) {
+            console.log(str[i]);
+          }
+        } else {
+          for (var j = 0; j < len; j++) {
+            if (str[j] === delimiter) {
+              console.log(current_string);
+              current_string = "";
+            } else {
+              current_string += str[j];
+            }
+          }
+          console.log(current_string);
+        }
+        console.log("---------------");
+      }
+
+      splitString('abc,123,hello world', ',');
+      splitString('hello');
+      splitString('hello', '');
+      splitString('hello', ';');
+      splitString(';hello;', ';');
+    </script>
+  </body>
+</html>
