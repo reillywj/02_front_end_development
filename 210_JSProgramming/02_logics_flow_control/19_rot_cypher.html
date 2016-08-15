@@ -38,6 +38,8 @@
       var testStr = 'Teachers open the door, but you must enter by yourself.';
       var expect = 'Grnpuref bcra gur qbbe, ohg lbh zhfg ragre ol lbhefrys.';
       console.log(isLetter(67));
+      console.log(isAlphaUpperHalf("m".charCodeAt()) === true);
+      console.log(isAlphaUpperHalf("n".charCodeAt()) === false);
       console.log(rot13(testStr) === expect);
       console.log(rot13(rot13(testStr)) === testStr);
     </script>
