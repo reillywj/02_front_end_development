@@ -14,7 +14,7 @@
       }
 
       function isAlphaUpperHalf(charCode) {
-        return 65 <= charCode && charCode < (65 + 13) ||
+        return 65 <= charCode && charCode < (65 + 13) || //or
                97 <= charCode && charCode < (97 + 13);
       }
 
@@ -24,11 +24,11 @@
           current_code = str[i].charCodeAt();
           if (isLetter(current_code)) {
             if (isAlphaUpperHalf(current_code)) {
-              current_code += 13;
+              current_code += 13; //make letter lower half of alphabet
             } else {
-              current_code -= 13;
+              current_code -= 13; //make letter upper half of alphabet
             }
-          } // else do nothing.
+          } // else do nothing
           cypher += String.fromCharCode(current_code);
         }
         return cypher;
