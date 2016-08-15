@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Rot13</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Rot 13 Cypher and LaunchSchool Code Review</h1>
+    <h2>By Will Reilly</h2>
+    <script>
+      function isLetter(charCode) {
+        return 65 <= charCode && charCode <= 90 || //or
+               97 <= charCode && charCode <= 122;
+      }
+
+      function isAlphaUpperHalf(charCode) {
+        return 65 <= charCode && charCode < (65 + 13) ||
+               97 <= charCode && charCode < (97 + 13);
+      }
+
+      function rot13(str) {
+        var cypher = "", current_code;
+        for (var i = 0, len = str.length; i < len; i++) {
+          current_code = str[i].charCodeAt();
+          if (isLetter(current_code)) {
+            if (isAlphaUpperHalf(current_code)) {
+              current_code += 13;
+            } else {
+              current_code -= 13;
+            }
+          } // else do nothing.
+          cypher += String.fromCharCode(current_code);
+        }
+        return cypher;
+      }
+
+
+      var testStr = 'Teachers open the door, but you must enter by yourself.';
+      var expect = 'Grnpuref bcra gur qbbe, ohg lbh zhfg ragre ol lbhefrys.';
+      console.log(isLetter(67));
+      console.log(rot13(testStr) === expect);
+      console.log(rot13(rot13(testStr)) === testStr);
+    </script>
+  </body>
+</html>
