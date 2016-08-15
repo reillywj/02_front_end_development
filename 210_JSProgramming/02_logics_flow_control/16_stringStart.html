@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>String Repeat</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>String Repeat</h1>
+    <script>
+      // from 12_indexing.html
+      // food for thought: probably be good to start dropping these into a .js file and import them into the html.
+      function indexOf(str, substr, start = -1) {
+        if (substr === "") { return start + 1; }
+        var found;
+        for (var i = start + 1, stopper = str.length - substr.length + 1; i < stopper; i++) {
+          if (str[i] === substr[0]) {
+            found = true;
+            for (var j = 0, len = substr.length; j < len; j++) {
+              if( str[i + j] !== substr[j] ) {
+                found = false;
+                break;
+              }
+            }
+            if (found) {
+              return i;
+            }
+          } else { continue; }
+        }
+        return -1;
+      }
+
+      function startsWith(str, search) {
+        var answer = indexOf(str, search) === 0;
+        console.log(answer);
+        return answer;
+      }
+
+      var str = 'We put comprehension and mastery above all else';
+      startsWith(str, 'We');       // true
+      startsWith(str, 'We put');   // true
+      startsWith(str, '');         // true
+      startsWith(str, 'put');      // false
+
+      var longerString = 'We put comprehension and mastery above all else!';
+      startsWith(str, longerString);      // false
+
+    </script>
+  </body>
+</html>

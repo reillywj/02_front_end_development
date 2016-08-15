@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Substring(1)</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Substring(1)</h1>
+    <script>
+      function substr(str, start, length) {
+        var substr = "";
+        if ( start < 0 ) { start += str.length; }
+        for ( var i = 0, str_len = str.length; i < length && start + i < str_len; i++) {
+          substr += str[start + i];
+        }
+        console.log(substr);
+        return substr;
+      }
+
+      function substring(str, start, end) {
+        var substr = "";
+        if (end === undefined) { end = str.length; }
+        if (isNaN(start) || start < 0) {start = 0;}
+        if (isNaN(end) || end < 0) {end = 0;}
+        if (!Number.isInteger(end) || end > str.length ) { end = str.length; }
+        if (!Number.isInteger(start) || start > str.length) { start = str.length; }
+
+        if ( start >= 0 && end >= 0 && start > end) { return substring(str, end, start); }
+
+        for (var i = start; i < end; i++) {
+          substr += str[i];
+        }
+        console.log(substr);
+        return substr;
+
+      }
+
+      var string = 'hello world';
+
+      substr(string, 2, 4);     // "llo "
+      substr(string, -3, 2);    // "rl"
+      substr(string, 8, 20);    // "rld"
+      substr(string, 0, -20);   // ""
+      substr(string, 0, 0);     // ""
+
+      substring(string, 2, 4);    // "ll"
+      substring(string, 4, 2);    // "ll"
+      substring(string, 0, -1);   // ""
+      substring(string, 2);       // "llo world"
+      substring(string, 'a');     // "hello world"
+      substring(string, 8, 20);   // "rld"
+    </script>
+  </body>
+</html>

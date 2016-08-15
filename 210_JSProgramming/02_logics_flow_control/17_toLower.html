@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Strings to Lower Case</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Strings to Lower Case</h1>
+    <script>
+      function toLowerCase(str) {
+        var lower = "", current_char_code;
+        for (var i = 0, len = str.length; i < len; i++) {
+          current_char_code = str.charCodeAt(i);
+          if (current_char_code >= 65 && current_char_code <= 90) {
+            current_char_code += 32;
+          }
+          lower += String.fromCharCode(current_char_code);
+        }
+        console.log(lower); //To check;
+        return lower;
+      }
+
+      toLowerCase('ALPHABET');      // "alphabet"
+      toLowerCase('123');           // "123"
+      toLowerCase('abcDEF');        // "abcdef"
+      toLowerCase('AZaz!)[]1029398,</.AzZZZ')
+    </script>
+  </body>
+</html>
