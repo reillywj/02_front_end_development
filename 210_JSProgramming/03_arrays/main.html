@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang='en-US'>
+  <head>
+    <title>Array Exercises: Main</title>
+    <meta charset='utf-8'>
+  </head>
+  <body>
+    <h1>Main HTML File for Array Exercises</h1>
+    <h2>By Will Reilly for LaunchSchool</h2>
+    <script src="01_exercises.js"></script>
+    <script src="02_arr_ops.js"></script>
+    <script src="03_indexOf.js"></script>
+    <script src="04_more_arr_ops.js"></script>
+    <script src="05_array_uses.js"></script>
+
+
+    <script type="text/javascript">
+      function logz(text) {
+        console.log("> " + text);
+      }
+
+      function assert(actual, expected) {
+        logz(actual === expected);
+      }
+
+      function assertArr(actual, expected) {
+        if(actual.length !== expected.length) {
+          logz(false);
+          return false;
+        }
+        for(var i = 0, len = actual.length; i < len; i++) {
+          if(actual[i] !== expected[i]) { 
+            logz(false);
+            return false;
+            }
+        }
+        logz(true);
+        return true;
+      }
+
+      var count = [1,2,3];
+
+      assert(push(count,4), 4);
+      rollCall(count);
+
+      assert(pop(count), 4);
+      rollCall(count);
+
+      assert(unshift(count, 0), 4);
+      rollCall(count);
+
+      assert(shift(count), 0);
+      rollCall(count);
+
+      assert(indexOf([1,2,3,3], 3), 2);
+      assert(indexOf([1,2,3], 4), -1);
+
+      assert(lastIndexOf([1,2,3,3], 3), 3);
+      assert(lastIndexOf([1,2,3], 4), -1);
+
+      assertArr(slice([1,2,3,4,5], 0, 2), [1, 2])
+
+      count = [1,2,3,4,5,6,7,8];
+      assertArr(splice(count, 2, 5), [3,4,5,6,7]);
+      assertArr(count, [1,2,8]);
+      assertArr(splice(count,1,3), [2,8]);
+      assertArr(count, [1]);
+
+      assertArr(concat([1,2,3],[4,5,6]),[1,2,3,4,5,6]);
+
+      var ck = ["bri", "tru", "wha"];
+      count = [1,2,3];
+
+      assert(join(ck, "ck "), "brick truck wha");
+      assert(join(count, ' and '), '1 and 2 and 3');
+
+      logz("Exercises: Basic Array Uses");
+      var usa = ['U', 'S', 'A'];
+      assert(firstElementOf(usa), 'U');
+      assert(lastElementOf(usa), 'A');
+
+      var digits = [4, 8, 15, 16, 23, 42];
+      assert(nthElementOf(digits, 3), 16);
+      assert(nthElementOf(digits, 8), undefined);
+      assert(nthElementOf(digits, -1), undefined);
+
+      assertArr(firstNOf(digits, 3), [4, 8, 15]);
+      assertArr(lastNOf(digits, 3), [16, 23, 42]);
+      assertArr(endsOf([4,8,5], [16, 23, 42]), [4, 42]);
+    </script>
+  </body>
+</html>
